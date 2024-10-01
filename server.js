@@ -10,8 +10,10 @@ const app = express();
 // import middleware & routes
 import { connectDB } from "./db/connectDB.js";
 
+import authRouter from "./routes/authRouter.js";
 // set routes
-
+app.use(express.json());
+app.use("/api/v1/auth", authRouter);
 // set spin-up function
 const PORT = process.env.PORT || 8080;
 
