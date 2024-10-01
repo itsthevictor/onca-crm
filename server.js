@@ -8,6 +8,7 @@ dotenv.config();
 const app = express();
 
 // import middleware & routes
+import { connectDB } from "./db/connectDB.js";
 
 // set routes
 
@@ -15,10 +16,10 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 
 // start server
-const start = () => {
+const start = async () => {
   try {
     // await connect db
-
+    await connectDB(process.env.MONGO_URI);
     // app listen
     app.listen(PORT, () =>
       console.log(`server is listening on port ${PORT} ...`)
