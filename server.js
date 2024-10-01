@@ -11,6 +11,7 @@ const app = express();
 
 // import middleware & routes
 import authRouter from "./routes/authRouter.js";
+import partnerRouter from "./routes/partnerRouter.js";
 
 // middleware
 if (process.env.NODE_ENV === "development") {
@@ -19,6 +20,7 @@ if (process.env.NODE_ENV === "development") {
 app.use(cookieParser());
 app.use(express.json());
 app.use("/api/v1/auth", authRouter);
+app.use("/api/v1/partners", partnerRouter);
 
 app.use("*", (req, res) => {
   res.status(404).json({ msg: "not found" });
