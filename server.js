@@ -2,18 +2,24 @@
 import express from "express";
 import * as dotenv from "dotenv";
 import morgan from "morgan";
+import { connectDB } from "./db/connectDB.js";
+import cookieParser from "cookie-parser";
 
 // init dotenv & setup app
 dotenv.config();
 const app = express();
 
 // import middleware & routes
-import { connectDB } from "./db/connectDB.js";
-
 import authRouter from "./routes/authRouter.js";
-// set routes
+
+// middleware
+if (process.env.NODE_ENV === "development") {
+  app.use(morgan("dev"));
+}
+app.use(cookieParser());
 app.use(express.json());
 app.use("/api/v1/auth", authRouter);
+
 // set spin-up function
 const PORT = process.env.PORT || 8080;
 
