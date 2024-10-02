@@ -1,13 +1,19 @@
+import Partner from "../models/Partner.js";
+
 export const createPartner = async (req, res) => {
-  res.status(202).json({ msg: "created partner" });
+  const partner = await Partner.create(req.body);
+  res.status(201).json({ partner });
 };
 
 export const getAllPartners = async (req, res) => {
-  res.status(200).json({ msg: "got all partners" });
+  const partners = await Partner.find();
+  res.status(200).json({ partners });
 };
 
 export const getSinglePartner = async (req, res) => {
-  res.status(200).json({ msg: "got single partner" });
+  const { id } = req.params;
+  const partner = await Partner.findById(id);
+  res.status(200).json({ partner });
 };
 
 export const updatePartner = async (req, res) => {
