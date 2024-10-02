@@ -1,4 +1,5 @@
 // import modules
+import "express-async-errors";
 import express from "express";
 import * as dotenv from "dotenv";
 import morgan from "morgan";
