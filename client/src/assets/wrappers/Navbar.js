@@ -27,18 +27,19 @@ const Wrapper = styled.nav`
   }
 
   .search-box {
-    padding: 5px;
-    width: 300px;
+    padding: 8px;
+    width: 350px;
     border-radius: var(--round-sm);
     background: var(--blue-200);
     border: none;
     outline: none;
   }
   .status {
+    padding-left: 70px;
     display: flex;
     align-items: center;
   }
-  .status img {
+  .avatar {
     width: 30px;
     height: 30px;
   }
