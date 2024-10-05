@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import Dashboard from "./layouts/Dashboard";
+import Dashboard, { dashboardLoader } from "./layouts/Dashboard";
 import Partners from "./pages/Partners";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
@@ -10,6 +10,7 @@ function App() {
     {
       path: "/",
       element: <Dashboard />,
+      loader: dashboardLoader,
       children: [
         {
           path: "partners",

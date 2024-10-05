@@ -10,13 +10,40 @@ const Wrapper = styled.nav`
   color: var(--blue-000);
 
   .nav-container {
-    width: 90vw;
+    width: 97.5vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
+  .logo-container img {
+    width: 35px;
+  }
+  .logo-container {
+    gap: 10px;
+  }
+  .logo-text {
+    font-size: 1em;
+    font-family: ;
+  }
 
-  .toggle-btn {
+  .search-box {
+    padding: 5px;
+    width: 300px;
+    border-radius: var(--round-sm);
+    background: var(--blue-200);
+    border: none;
+    outline: none;
+  }
+  .status {
+    display: flex;
+    align-items: center;
+  }
+  .status img {
+    width: 30px;
+    height: 30px;
+  }
+
+  /* .toggle-btn {
     background: transparent;
     border-color: transparent;
     font-size: 1.75rem;
@@ -24,22 +51,7 @@ const Wrapper = styled.nav`
     cursor: pointer;
     display: flex;
     align-items: center;
-  }
-
-  .logo-text {
-    display: none;
-  }
-
-  .logo {
-    display: flex;
-    align-items: center;
-    width: 100px;
-  }
-
-  .btn-container {
-    display: flex;
-    align-items: center;
-  }
+  } */
 
   @media (min-width: 992px) {
     position: sticky;

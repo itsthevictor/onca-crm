@@ -1,10 +1,31 @@
-import { Outlet } from "react-router-dom";
-import Navbar from "../components/Navbar";
-import Menu from "../components/Menu";
+import { Outlet, useLoaderData } from "react-router-dom";
+import { Navbar, Menu } from "../components";
+import axios from "axios";
+
+export const dashboardLoader = async () => {
+  try {
+    const { data } = await axios.get(
+      `https://randommer.io/api/Name?nameType=fullname&quantity=1`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+          "X-Api-Key": "99c18ce9e984478282c1f74e6277df0a",
+        },
+      }
+    );
+    return data;
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+};
+
 const Dashboard = () => {
+  const data = useLoaderData();
+
   return (
     <main>
-      <Navbar />
+      <Navbar data={data} />
 
       <div className="dashboard-container">
         <Menu />
