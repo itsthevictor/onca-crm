@@ -1,21 +1,24 @@
 import Partner from "../models/Partner.js";
+import { StatusCodes } from "http-status-codes";
 
 export const createPartner = async (req, res) => {
   const partner = await Partner.create(req.body);
-  res.status(201).json({ partner });
+  res.status(StatusCodes.CREATED).json({ partner });
 };
 
 export const getAllPartners = async (req, res) => {
   const partners = await Partner.find();
-  res.status(200).json({ partners });
+  res.status(StatusCodes.OK).json({ partners });
 };
 
 export const getSinglePartner = async (req, res) => {
   const partner = await Partner.findById(req.params.id);
   if (!partner) {
-    return res.status(404).json({ msg: `no partner with id ${req.params.id}` });
+    return res
+      .status(StatusCodes.NOT_FOUND)
+      .json({ msg: `no partner with id ${req.params.id}` });
   }
-  res.status(200).json({ partner });
+  res.status(StatusCodes.OK).json({ partner });
 };
 
 export const updatePartner = async (req, res) => {
@@ -27,15 +30,21 @@ export const updatePartner = async (req, res) => {
     }
   );
   if (!updatedPartner) {
-    return res.status(404).json({ msg: `no partner with id ${req.params.id}` });
+    return res
+      .status(StatusCodes.NOT_FOUND)
+      .json({ msg: `no partner with id ${req.params.id}` });
   }
-  res.status(200).json({ msg: "partner modified", partner: updatedPartner });
+  res
+    .status(StatusCodes.OK)
+    .json({ msg: "partner modified", partner: updatedPartner });
 };
 
 export const deletePartner = async (req, res) => {
   const partner = await Partner.findByIdAndDelete(req.params.id);
   if (!partner) {
-    return res.status(404).json({ msg: `no partner with id ${req.params.id}` });
+    return res
+      .status(StatusCodes.NOT_FOUND)
+      .json({ msg: `no partner with id ${req.params.id}` });
   }
-  res.status(200).json({ msg: `partner removed successfully` });
+  res.status(StatusCodes.OK).json({ msg: `partner removed successfully` });
 };
