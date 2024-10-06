@@ -1,5 +1,6 @@
 import Partner from "../models/Partner.js";
 import { StatusCodes } from "http-status-codes";
+import { NotFoundError } from "../errors/customErrors.js";
 
 export const createPartner = async (req, res) => {
   const partner = await Partner.create(req.body);
@@ -13,11 +14,8 @@ export const getAllPartners = async (req, res) => {
 
 export const getSinglePartner = async (req, res) => {
   const partner = await Partner.findById(req.params.id);
-  if (!partner) {
-    return res
-      .status(StatusCodes.NOT_FOUND)
-      .json({ msg: `no partner with id ${req.params.id}` });
-  }
+  if (!partner) throw new NotFoundError(`no partner with id ${req.params.id}`);
+
   res.status(StatusCodes.OK).json({ partner });
 };
 
@@ -29,11 +27,8 @@ export const updatePartner = async (req, res) => {
       new: true,
     }
   );
-  if (!updatedPartner) {
-    return res
-      .status(StatusCodes.NOT_FOUND)
-      .json({ msg: `no partner with id ${req.params.id}` });
-  }
+  if (!updatedPartner)
+    throw new NotFoundError(`no partner with id ${req.params.id}`);
   res
     .status(StatusCodes.OK)
     .json({ msg: "partner modified", partner: updatedPartner });
@@ -41,10 +36,6 @@ export const updatePartner = async (req, res) => {
 
 export const deletePartner = async (req, res) => {
   const partner = await Partner.findByIdAndDelete(req.params.id);
-  if (!partner) {
-    return res
-      .status(StatusCodes.NOT_FOUND)
-      .json({ msg: `no partner with id ${req.params.id}` });
-  }
+  if (!partner) throw new NotFoundError(`no partner with id ${req.params.id}`);
   res.status(StatusCodes.OK).json({ msg: `partner removed successfully` });
 };
