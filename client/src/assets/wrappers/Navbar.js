@@ -33,6 +33,7 @@ const Wrapper = styled.nav`
     background: var(--blue-200);
     border: none;
     outline: none;
+    color: var(--grey-100);
   }
   .status {
     padding-left: 70px;
