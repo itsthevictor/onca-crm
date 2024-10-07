@@ -64,10 +64,6 @@ const Wrapper = styled.nav`
       height: 40px;
     }
 
-    /* .logo {
-      display: none;
-    } */
-
     .logo-text {
       display: block;
     }
