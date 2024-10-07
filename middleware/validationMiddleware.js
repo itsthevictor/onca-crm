@@ -1,5 +1,6 @@
 import { body, validationResult } from "express-validator";
-import { BadRequestError } from "../errors/customErrors";
+import { BadRequestError } from "../errors/customErrors.js";
+import { PARTNER_PREFIX, PARTNER_SUFFIX } from "../utils/constants.js";
 
 const withValidationErrors = (validateValues) => {
   return [
@@ -15,11 +16,12 @@ const withValidationErrors = (validateValues) => {
   ];
 };
 
-export const validateTest = withValidationErrors([
-  body("name")
-    .notEmpty()
-    .withMessage("name is required \n")
-    .isLength({ min: 4 })
-    .withMessage("name must be at least 4 characters long \n")
-    .trim(),
+export const validatePartnerInput = withValidationErrors([
+  body("name").notEmpty().withMessage("company name is required"),
+  body("prefix")
+    .isIn(Object.values(PARTNER_PREFIX))
+    .withMessage("invalid company prefix"),
+  body("suffix")
+    .isIn(Object.values(PARTNER_SUFFIX))
+    .withMessage("invalid company suffix"),
 ]);
