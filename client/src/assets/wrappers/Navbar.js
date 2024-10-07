@@ -16,13 +16,13 @@ const Wrapper = styled.nav`
     justify-content: space-between;
   }
   .logo-container img {
-    width: 35px;
+    width: 30px;
   }
   .logo-container {
     gap: 10px;
   }
   .logo-text {
-    font-size: 1em;
+    font-size: 1.5em;
     font-family: ;
   }
 
