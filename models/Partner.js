@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { PARTNER_PREFIX, PARTNER_SUFFIX } from "../utils/constants.js";
 
 const PartnerSchema = new mongoose.Schema(
   {
@@ -6,13 +7,13 @@ const PartnerSchema = new mongoose.Schema(
 
     prefix: {
       type: String,
-      enum: ["S.C.", "P.F.", "P.F.A."],
-      default: "account",
+      enum: Object.values(PARTNER_PREFIX),
+      default: PARTNER_PREFIX.SC,
     },
     suffix: {
       type: String,
-      enum: ["S.R.L.", "S.A.", "S.N.C.", "S.C.S.", "S.C.A.", "G.I.E."],
-      default: "account",
+      enum: Object.values(PARTNER_SUFFIX),
+      default: PARTNER_PREFIX.SRL,
     },
     CUI: String,
     registrationNumber: String,
