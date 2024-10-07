@@ -10,12 +10,14 @@ import cookieParser from "cookie-parser";
 dotenv.config();
 const app = express();
 
-// import middleware & routes
+// import middleware
+import errorHandlerMiddleware from "./middleware/errorHandlerMiddleware.js";
+
+// import routes
 import authRouter from "./routes/authRouter.js";
 import partnerRouter from "./routes/partnerRouter.js";
 
 // middleware
-import errorHandlerMiddleware from "./middleware/errorHandlerMiddleware.js";
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
