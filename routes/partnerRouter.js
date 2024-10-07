@@ -6,16 +6,18 @@ import {
   updatePartner,
   deletePartner,
 } from "../controllers/partnerController.js";
-import { validatePartnerInput } from "../middleware/validationMiddleware.js";
+import {
+  validatePartnerInput,
+  validateIdParam,
+} from "../middleware/validationMiddleware.js";
 
 const router = Router();
 
 router.route("/").post(validatePartnerInput, createPartner).get(getAllPartners);
 router
   .route("/:id")
-  .get(getSinglePartner)
-  .post(updatePartner)
-  .patch(validatePartnerInput, updatePartner)
-  .delete(deletePartner);
+  .get(validateIdParam, getSinglePartner)
+  .patch(validateIdParam, validatePartnerInput, updatePartner)
+  .delete(validateIdParam, deletePartner);
 
 export default router;

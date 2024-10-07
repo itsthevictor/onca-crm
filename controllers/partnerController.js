@@ -14,8 +14,6 @@ export const getAllPartners = async (req, res) => {
 
 export const getSinglePartner = async (req, res) => {
   const partner = await Partner.findById(req.params.id);
-  if (!partner) throw new NotFoundError(`no partner with id ${req.params.id}`);
-
   res.status(StatusCodes.OK).json({ partner });
 };
 
@@ -27,8 +25,6 @@ export const updatePartner = async (req, res) => {
       new: true,
     }
   );
-  if (!updatedPartner)
-    throw new NotFoundError(`no partner with id ${req.params.id}`);
   res
     .status(StatusCodes.OK)
     .json({ msg: "partner modified", partner: updatedPartner });
@@ -36,6 +32,5 @@ export const updatePartner = async (req, res) => {
 
 export const deletePartner = async (req, res) => {
   const partner = await Partner.findByIdAndDelete(req.params.id);
-  if (!partner) throw new NotFoundError(`no partner with id ${req.params.id}`);
   res.status(StatusCodes.OK).json({ msg: `partner removed successfully` });
 };
