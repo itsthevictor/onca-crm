@@ -33,7 +33,7 @@ export const validatePartnerInput = withValidationErrors([
 export const validateIdParam = withValidationErrors([
   param("id").custom(async (value) => {
     const isValidId = mongoose.Types.ObjectId.isValid(value);
-    if (!isValidId) throw new BadRequestError("invalid MongoDB id");
+    if (!isValidId) throw new Error("invalid MongoDB id");
     const partner = await Partner.findById(value);
     if (!partner) throw new NotFoundError(`no partner with id ${value}`);
   }),
