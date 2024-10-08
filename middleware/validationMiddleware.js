@@ -3,6 +3,7 @@ import { BadRequestError, NotFoundError } from "../errors/customErrors.js";
 import { PARTNER_PREFIX, PARTNER_SUFFIX } from "../utils/constants.js";
 import mongoose from "mongoose";
 import Partner from "../models/Partner.js";
+import User from "../models/User.js";
 
 const withValidationErrors = (validateValues) => {
   return [
@@ -37,4 +38,21 @@ export const validateIdParam = withValidationErrors([
     const partner = await Partner.findById(value);
     if (!partner) throw new NotFoundError(`no partner with id ${value}`);
   }),
+]);
+
+export const validateUserInput = withValidationErrors([
+  body("firstName").notEmpty().withMessage("user first name is required"),
+  body("lastName").notEmpty().withMessage("user last name is required"),
+  body("email")
+    .notEmpty()
+    .withMessage("email is required")
+    .isEmail()
+    .withMessage("invalid email format")
+    .custom(async (email) => {
+      const user = await User.findOne({ email });
+      if (user) {
+        throw new BadRequestError("email already in use");
+      }
+    }),
+  body("password").notEmpty().withMessage("password is required"),
 ]);
