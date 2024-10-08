@@ -22,8 +22,9 @@ const Wrapper = styled.nav`
     gap: 10px;
   }
   .logo-text {
-    font-size: 1.5em;
-    font-family: ;
+    font-size: 1.55em;
+    font-style: italic;
+    letter-spacing: 0.03em;
   }
 
   .search-box {

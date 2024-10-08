@@ -1,10 +1,9 @@
 import User from "../models/User.js";
 import StatusCodes from "http-status-codes";
-import bcrypt from "bcryptjs";
+import { hashPassword } from "../utils/hashPassword.js";
 
 export const register = async (req, res) => {
-  const salt = await bcrypt.genSalt(10);
-  const hashedPassword = await bcrypt.hash(req.body.password, salt);
+  const hashedPassword = await hashPassword(req.body.password);
   req.body.password = hashedPassword;
   const user = await User.create(req.body);
   res.status(StatusCodes.CREATED).json({ user });
