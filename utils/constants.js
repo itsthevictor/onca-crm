@@ -13,3 +13,9 @@ export const PARTNER_SUFFIX = {
   SCA: "S.C.A.",
   GIE: "G.I.E.",
 };
+
+export const USER_ROLES = {
+  ACCOUNT: "account",
+  OFFICER: "officer",
+  ADMIN: "admin",
+};

@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { USER_ROLES } from "../utils/constants";
 
 const UserSchema = new mongoose.Schema({
   firstName: {
@@ -17,8 +18,8 @@ const UserSchema = new mongoose.Schema({
   password: String,
   role: {
     type: String,
-    enum: ["admin", "account", "executive"],
-    default: "account",
+    enum: Object.values(USER_ROLES),
+    default: USER_ROLES.ACCOUNT,
   },
   verificationToken: {
     type: String,
