@@ -30,6 +30,14 @@ const PartnerSchema = new mongoose.Schema(
     measures: [],
     status: String,
     VAT: Boolean,
+    createdBy: {
+      type: mongoose.Types.ObjectId,
+      ref: "User",
+    },
+    assignedTo: {
+      type: mongoose.Types.ObjectId,
+      ref: "User",
+    },
   },
   { timestamps: true }
 );
