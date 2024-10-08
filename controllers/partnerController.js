@@ -3,12 +3,18 @@ import { StatusCodes } from "http-status-codes";
 import { NotFoundError } from "../errors/customErrors.js";
 
 export const createPartner = async (req, res) => {
+  req.body.createdBy = req.user.userId;
   const partner = await Partner.create(req.body);
+
   res.status(StatusCodes.CREATED).json({ partner });
 };
 
 export const getAllPartners = async (req, res) => {
   const partners = await Partner.find();
+  res.status(StatusCodes.OK).json({ partners });
+};
+export const getMyPartners = async (req, res) => {
+  const partners = await Partner.find({ createdBy: req.user.userId });
   res.status(StatusCodes.OK).json({ partners });
 };
 

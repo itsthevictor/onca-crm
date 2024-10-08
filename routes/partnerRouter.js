@@ -5,6 +5,7 @@ import {
   getSinglePartner,
   updatePartner,
   deletePartner,
+  getMyPartners,
 } from "../controllers/partnerController.js";
 import {
   validatePartnerInput,
@@ -14,6 +15,7 @@ import {
 const router = Router();
 
 router.route("/").post(validatePartnerInput, createPartner).get(getAllPartners);
+router.route("/my-partners").get(getMyPartners);
 router
   .route("/:id")
   .get(validateIdParam, getSinglePartner)

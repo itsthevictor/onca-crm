@@ -42,4 +42,9 @@ const PartnerSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+PartnerSchema.pre("save", function (next) {
+  this.assignedTo = this.get("createdBy");
+  next();
+});
+
 export default mongoose.model("Partner", PartnerSchema);
