@@ -1,13 +1,9 @@
-import { useState } from "react";
 import Wrapper from "../assets/wrappers/Navbar";
 import Logo from "./Logo";
 import SearchBox from "./SearchBox";
-
+import { Link } from "react-router-dom";
 const Navbar = ({ data }) => {
-  const fullName = data[0];
-  var names = fullName.split(/(\s+)/);
-  const avatarURL = `https://avatar.iran.liara.run/username?username=${names[0]}+${names[2]}`;
-  const [avatarHover, setAvatarHover] = useState(false);
+  const avatarURL = `https://avatar.iran.liara.run/username?username=${data.firstName}+${data.lastName}`;
   return (
     <Wrapper>
       <div className="nav-container">
@@ -22,7 +18,7 @@ const Navbar = ({ data }) => {
             src={avatarURL}
             alt="avatar"
             className="avatar"
-            title={data[0]}
+            title={`${data.firstName} ${data.lastName}`}
           />
         </div>
       </div>
