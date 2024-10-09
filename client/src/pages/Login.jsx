@@ -1,13 +1,13 @@
 import { Logo } from "../components";
-import { Form, Link } from "react-router-dom";
+import { Form, Link, redirect } from "react-router-dom";
 import Wrapper from "../assets/wrappers/Login";
-import axios from "axios";
+import { mainFetch } from "../utils/customFetch";
 
 export const loginAction = async ({ request }) => {
   const formData = await request.formData();
   const data = Object.fromEntries(formData);
   try {
-    await axios.post("http://localhost:8080/api/v1/auth/login", data);
+    await mainFetch.post("/auth/login", data);
     //  toast.success("Signed in");
     return redirect("/");
   } catch (error) {
