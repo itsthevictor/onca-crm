@@ -54,11 +54,11 @@ export const validateUserInput = withValidationErrors([
         throw new BadRequestError("email already in use");
       }
     }),
-  body("password")
-    .notEmpty()
-    .withMessage("password is required")
-    .isLength({ min: 8 })
-    .withMessage("password must be at least 8 characters long"),
+  // body("password")
+  //   .notEmpty()
+  //   .withMessage("password is required")
+  //   .isLength({ min: 8 })
+  //   .withMessage("password must be at least 8 characters long"),
 ]);
 
 export const validateLoginInput = withValidationErrors([
