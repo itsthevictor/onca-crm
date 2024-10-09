@@ -2,7 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Dashboard, { dashboardLoader } from "./layouts/Dashboard";
 import Partners from "./pages/Partners";
-import Login from "./pages/Login";
+import Login, { loginAction } from "./pages/Login";
 import Register from "./pages/Register";
 
 function App() {
@@ -21,6 +21,7 @@ function App() {
     {
       path: "autentificare",
       element: <Login />,
+      action: loginAction,
     },
     {
       path: "inregistrare",
