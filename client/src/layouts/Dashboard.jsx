@@ -1,6 +1,7 @@
 import { Outlet, useLoaderData } from "react-router-dom";
 import { Navbar, Menu } from "../components";
 import axios from "axios";
+import Wrapper from "../assets/wrappers/Dashboard";
 
 export const dashboardLoader = async () => {
   // try {
@@ -27,14 +28,18 @@ const Dashboard = () => {
   const data = { firstName: "Lewis", lastName: "Hamilton" };
 
   return (
-    <main>
-      <Navbar data={data} />
+    <Wrapper>
+      <main>
+        <Navbar data={data} />
 
-      <div className="dashboard-container">
-        <Menu />
-        <Outlet />
-      </div>
-    </main>
+        <section className="dashboard-container">
+          <Menu />
+          <section className="dashboard-page">
+            <Outlet />
+          </section>
+        </section>
+      </main>
+    </Wrapper>
   );
 };
 export default Dashboard;

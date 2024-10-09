@@ -1,25 +1,38 @@
 import styled from "styled-components";
 
-const Wrapper = styled.aside`
-  display: none;
-
-  @media (min-width: 992px) {
+const Wrapper = styled.section`
+  .sidebar-container {
+    /* display: none; */
     display: block;
+    position: fixed;
     box-shadow: 1px 0px 0px 0px rgba(0, 0, 0, 0.1);
-    .sidebar-container {
-      background: var(--blue-500);
-      min-height: calc(100vh - var(--nav-height));
-      height: 100%;
-      width: 170px;
-      /* margin-top:calc(0 - var(--nav-height)) */
-      /* margin-left: -250px; */
-      transition: margin-left 0.3s ease-in-out;
-    }
+    width: 170px;
+
+    background: var(--blue-500);
+    min-height: calc(100vh - var(--nav-height));
+    /* height: 100%; */
+    width: 170px;
+    margin-top: calc(0 - var(--nav-height)) * /;
+    @media (min-width: 992px) {
+      .sidebar-container {
+        display: block;
+        box-shadow: 1px 0px 0px 0px rgba(0, 0, 0, 0.1);
+        width: 170px;
+
+        background: var(--blue-500);
+        min-height: calc(100vh - var(--nav-height));
+        /* height: 100%; */
+        width: 170px;
+        margin-top: calc(0 - var(--nav-height)) * /;
+      }
+      /* margin-left: -250px;
+    transition: margin-left 0.3s ease-in-out;
+
     /* .content {
       position: sticky;
       top: 0;
     } */
-    header {
+      /* header {
       height: 6rem;
       display: flex;
       align-items: center;
@@ -45,9 +58,9 @@ const Wrapper = styled.aside`
     .nav-link:hover {
       padding-left: 3rem;
       color: var(--primary-200);
-      /* transition: var(--transition); */
-    }
-    .icon {
+      transition: var(--transition);
+    } */
+      /* .icon {
       font-size: 1.5rem;
       margin-right: 1rem;
       display: grid;
@@ -58,6 +71,7 @@ const Wrapper = styled.aside`
     }
     .pending {
       background: var(--blue-500);
+    } */
     }
   }
 `;
