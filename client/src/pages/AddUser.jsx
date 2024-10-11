@@ -2,18 +2,17 @@ import { useState } from "react";
 import { Form, Link, redirect } from "react-router-dom";
 import Wrapper from "../assets/wrappers/AddUser";
 import { mainFetch } from "../utils/customFetch";
+import { toast } from "react-toastify";
 
 export const addUserAction = async ({ request }) => {
   const formData = await request.formData();
   const data = Object.fromEntries(formData);
   try {
     await mainFetch.post("/auth/register", data);
-    //  toast.success("Signed in");
+    toast.success("user registered");
     return redirect("/personal");
   } catch (error) {
-    //  toast.error(error?.response?.data?.msg);
-    console.log(error);
-    return error;
+    return toast.error(error?.response?.data?.msg);
   }
 };
 const AddUser = () => {
@@ -26,6 +25,9 @@ const AddUser = () => {
   return (
     <Wrapper>
       <div className="wrapper">
+        <div className="page-title">
+          <h2>Adaugă user</h2>
+        </div>
         <div className="form-container">
           <Form method="post">
             <div className="form-row">

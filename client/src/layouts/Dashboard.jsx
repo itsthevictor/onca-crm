@@ -31,12 +31,11 @@ const Dashboard = () => {
     <Wrapper>
       <main>
         <Navbar data={data} />
-
         <section className="dashboard-container">
           <Menu />
-          <section className="dashboard-page">
+          <div className="dashboard-page">
             <Outlet />
-          </section>
+          </div>
         </section>
       </main>
     </Wrapper>
