@@ -122,6 +122,7 @@ const AddUser = () => {
                 </label>
               </div>
             </div>
+            <div className="form-row"></div>
 
             <button type="submit" disabled={!firstName || !lastName || !email}>
               submit

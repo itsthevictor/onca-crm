@@ -15,14 +15,15 @@ const Wrapper = styled.section`
         display: flex;
       }
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 180px auto;
     }
 
     .dashboard-page {
-      width: 90vw;
-      margin: 0 auto;
-      padding: 2rem 0;
+      width: 100%;
+      /* margin: 0 auto; */
+      padding: 1rem 0;
       max-height: calc(100vh - var(--nav-height));
+      /* overflow-y: scroll; */
     }
   }
 `;
