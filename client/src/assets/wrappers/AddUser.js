@@ -105,7 +105,7 @@ const Wrapper = styled.div`
 
             input[type="radio"]:checked + label {
               background: var(--blue-200);
-              color: var(--blue-50);
+              color: var(--primary-100);
               font-weight: 500;
             }
           }
