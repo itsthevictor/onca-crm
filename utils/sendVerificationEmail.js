@@ -9,7 +9,7 @@ export const sendVerificationEmail = async ({
 
   sgMail.setApiKey(process.env.SENDGRID_API_KEY);
   const msg = {
-    from: "ONCA  CRM <hello@onca.studio>",
+    from: "BLAZE CRM <hello@onca.studio>",
     to: email,
     templateId: process.env.VERIFY_EMAIL_TEMPLATE,
     dynamicTemplateData: {
