@@ -24,6 +24,22 @@ export const register = async (req, res) => {
   res.status(StatusCodes.CREATED).json({ user });
 };
 
+export const verifyEmail = async (req, res) => {
+  const { token, email } = req.body;
+  const user = await User.findOne({ email });
+  if (!user) {
+    throw new UnauthenticatedError(`verification failed, no such user`);
+  }
+  if (user.verificationToken !== token) {
+    throw new UnauthenticatedError(`verification failed, bad token`);
+  }
+  user.isVerified = true;
+  user.verified = Date.now();
+  user.verificationToken = "";
+  await user.save();
+  res.status(StatusCodes.OK).json({ msg: "email verified!" });
+};
+
 export const login = async (req, res) => {
   const user = await User.findOne({ email: req.body.email });
   const isValidUser =
