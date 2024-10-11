@@ -53,7 +53,9 @@ const Wrapper = styled.div`
           margin-bottom: 10px;
 
           label {
-            /* color: var(--grey-100); */
+            color: var(--grey-300);
+            font-weight: 500;
+            text-transform: capitalize;
           }
 
           input {
@@ -63,6 +65,7 @@ const Wrapper = styled.div`
             border-radius: var(--round-sm);
             border: 1px solid var(--grey-100);
             outline: none;
+            background: var(--grey-100);
           }
           .role {
             margin-top: 10px;
@@ -76,32 +79,33 @@ const Wrapper = styled.div`
 
             .radio-label {
               width: 100%;
-              padding: 12px 14px;
-              border-top: 1px solid var(--grey-100);
-              border-bottom: 1px solid var(--grey-100);
+              padding: 10px;
+              font-size: 0.9em;
+              /* border-top: 1px solid var(--grey-100);
+              border-bottom: 1px solid var(--grey-100); */
               text-align: center;
               cursor: pointer;
-              background: var(--blue-000);
+              background: var(--grey-100);
               color: var(--blue-200);
             }
 
             .radio-label:not(last-of-type) {
-              border-right: 1px solid var(--grey-100);
+              /* border-right: 1px solid var(--grey-100); */
             }
 
             .radio-label:first-of-type {
               border-radius: 10px 0 0 10px;
-              border-left: 1px solid var(--grey-100);
+              /* border-left: 1px solid var(--grey-100); */
             }
 
             .radio-label:last-of-type {
               border-radius: 0 10px 10px 0;
-              border-right: 1px solid var(--grey-100);
+              /* border-right: 1px solid var(--grey-100); */
             }
 
             input[type="radio"]:checked + label {
               background: var(--blue-200);
-              color: var(--blue-000);
+              color: var(--blue-50);
               font-weight: 500;
             }
           }
