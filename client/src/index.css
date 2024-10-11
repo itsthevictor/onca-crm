@@ -56,8 +56,8 @@
   --round-md: 10px;
   --round-lg: 25px;
 
-  --toastify-color-success: hsl(var(--primary-300));
-  --toastify-color-progress-bgo: hsl(var(--primary-300));
+  --toastify-color-success: var(--primary-300);
+  --toastify-color-progress-bgo: var(--primary-300);
 }
 
 * {
