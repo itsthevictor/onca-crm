@@ -1,28 +1,26 @@
 import { Logo } from "../components";
-import { Form, redirect } from "react-router-dom";
+import { Form, redirect, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { mainFetch } from "../utils/customFetch";
+import { toast } from "react-toastify";
 
-export const verifyEmailAction = async ({ request }) => {
-  const formData = await request.formData();
-  const data = Object.fromEntries(formData);
-  try {
-    await mainFetch.post("/auth/login", data);
-    //  toast.success("Signed in");
-    return redirect("login");
-  } catch (error) {
-    //  toast.error(error?.response?.data?.msg);
-    console.log(error);
-    return error;
-  }
-};
-
-const SetPasswordForm = () => {
+const SetPasswordForm = ({ email }) => {
   const [firstPass, setFirstPass] = useState(null);
   const [secondPass, setSecondPass] = useState(null);
-  const [match, setMatch] = useState(false);
-
-  const handleInput = () => {};
+  const navigate = useNavigate();
+  const handleSubmit = async () => {
+    try {
+      await mainFetch.patch("/users/activate-user", {
+        password: firstPass,
+        email,
+      });
+      toast.success("user activat");
+      await navigate("/autentificare");
+    } catch (error) {
+      toast.error(error?.response?.data?.msg);
+      console.log(error);
+    }
+  };
   return (
     <div className="container">
       <Logo />
@@ -37,7 +35,7 @@ const SetPasswordForm = () => {
             <input
               type="password"
               id="password-1"
-              name="password-1"
+              name="password"
               onChange={(e) => {
                 setFirstPass(e.target.value);
               }}
@@ -60,6 +58,7 @@ const SetPasswordForm = () => {
           <button
             type="submit"
             disabled={!firstPass || !secondPass || firstPass !== secondPass}
+            onClick={handleSubmit}
           >
             activează contul
           </button>

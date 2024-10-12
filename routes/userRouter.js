@@ -8,7 +8,7 @@ import {
 const router = Router();
 
 router.get("/current-user", getCurrentUser);
-router.post("/activate-user", activateAccount);
+router.patch("/activate-user", activateAccount);
 router.get("/app-stats", getApplicationStats);
 router.patch("/update-user", updateUser);
 

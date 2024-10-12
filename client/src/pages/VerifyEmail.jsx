@@ -15,7 +15,7 @@ export const verifyEmailLoader = async ({ params }) => {
     // toast.success("email verified");
     // return redirect("/dashboard");
     const verified = true;
-    return verified;
+    return { verified, email };
   } catch (error) {
     toast.error(error?.response?.data?.msg);
     return error;
@@ -23,14 +23,14 @@ export const verifyEmailLoader = async ({ params }) => {
 };
 
 const VerifyEmail = () => {
-  const verified = useLoaderData();
+  const { verified, email } = useLoaderData();
   return (
     <>
       <Wrapper>
         <div className="container">
           <div className="content">
             {verified === true ? (
-              <SetPasswordForm />
+              <SetPasswordForm email={email} />
             ) : (
               <h3>
                 something went wrong.please try again using the link in your

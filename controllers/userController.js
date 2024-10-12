@@ -15,8 +15,10 @@ export const getApplicationStats = async (req, res) => {
 export const activateAccount = async (req, res) => {
   const hashedPassword = await hashPassword(req.body.password);
   req.body.password = hashedPassword;
-  const updatedUser = await User.findOneAndUpdate(req.user.userId, req.body);
-  res.status(StatusCodes.OK).json({ updatedUser });
+  const filter = { email: req.body.email };
+  const update = { password: req.body.password };
+  const updatedUser = await User.findOneAndUpdate(filter, update);
+  res.status(StatusCodes.OK).json({ msg: "user activat" });
 };
 
 export const updateUser = async (req, res) => {
