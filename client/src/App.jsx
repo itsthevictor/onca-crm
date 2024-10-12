@@ -6,7 +6,10 @@ import Users from "./pages/Users";
 import Login, { loginAction } from "./pages/Login";
 import Register from "./pages/Register";
 import AddUser, { addUserAction } from "./pages/AddUser";
-import VerifyEmail, { verifyEmailLoader } from "./pages/VerifyEmail";
+import VerifyEmail, {
+  verifyEmailAction,
+  verifyEmailLoader,
+} from "./pages/VerifyEmail";
 
 function App() {
   const router = createBrowserRouter([
@@ -43,6 +46,7 @@ function App() {
       path: "verify-email/:token?/:email?",
       element: <VerifyEmail />,
       loader: verifyEmailLoader,
+      action: verifyEmailAction,
     },
   ]);
   return (

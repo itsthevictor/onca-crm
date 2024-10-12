@@ -13,6 +13,8 @@ export const getApplicationStats = async (req, res) => {
 };
 
 export const activateAccount = async (req, res) => {
+  console.log(req.body);
+
   const hashedPassword = await hashPassword(req.body.password);
   req.body.password = hashedPassword;
   const filter = { email: req.body.email };
