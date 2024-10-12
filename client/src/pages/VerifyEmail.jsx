@@ -12,7 +12,7 @@ export const verifyEmailLoader = async ({ params }) => {
       email,
     });
     console.log(response);
-    toast.success("email verified");
+    // toast.success("email verified");
     // return redirect("/dashboard");
     const verified = true;
     return verified;

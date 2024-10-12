@@ -91,6 +91,11 @@ const Wrapper = styled.div`
             background: var(--primary-100);
             color: var(--blue-500);
           }
+          &:disabled {
+            background: var(--grey-200);
+            /* color: var(--blue-500); */
+            cursor: not-allowed;
+          }
         }
       }
     }

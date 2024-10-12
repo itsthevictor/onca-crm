@@ -1,4 +1,7 @@
+import { Logo } from "../components";
+import { Form, redirect } from "react-router-dom";
 import { useState } from "react";
+import { mainFetch } from "../utils/customFetch";
 
 export const verifyEmailAction = async ({ request }) => {
   const formData = await request.formData();
@@ -15,7 +18,11 @@ export const verifyEmailAction = async ({ request }) => {
 };
 
 const SetPasswordForm = () => {
+  const [firstPass, setFirstPass] = useState(null);
+  const [secondPass, setSecondPass] = useState(null);
   const [match, setMatch] = useState(false);
+
+  const handleInput = () => {};
   return (
     <div className="container">
       <Logo />
@@ -26,18 +33,35 @@ const SetPasswordForm = () => {
         <Form method="post">
           <div className="form-row">
             {" "}
-            <label htmlFor="password-1">password</label>
-            <input type="password" id="password-1" name="password-1" />
+            <label htmlFor="password-1">Parola</label>
+            <input
+              type="password"
+              id="password-1"
+              name="password-1"
+              onChange={(e) => {
+                setFirstPass(e.target.value);
+              }}
+            />
           </div>
 
           <div className="form-row">
             {" "}
-            <label htmlFor="password-2">password</label>
-            <input type="password" id="password-2" name="password-2" />
+            <label htmlFor="password-2">Confirmă parola</label>
+            <input
+              type="password"
+              id="password-2"
+              name="password-2"
+              onChange={(e) => {
+                setSecondPass(e.target.value);
+              }}
+            />
           </div>
 
-          <button type="submit" disabled={!match}>
-            submit
+          <button
+            type="submit"
+            disabled={!firstPass || !secondPass || firstPass !== secondPass}
+          >
+            activează contul
           </button>
         </Form>
       </div>
