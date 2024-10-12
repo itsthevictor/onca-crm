@@ -2,8 +2,8 @@ import Wrapper from "../assets/wrappers/Navbar";
 import Logo from "./Logo";
 import SearchBox from "./SearchBox";
 import { Link } from "react-router-dom";
-const Navbar = ({ data }) => {
-  const avatarURL = `https://avatar.iran.liara.run/username?username=${data.firstName}+${data.lastName}`;
+const Navbar = ({ user }) => {
+  const avatarURL = `https://avatar.iran.liara.run/username?username=${user.firstName}+${user.lastName}`;
   return (
     <Wrapper>
       <div className="nav-container">
@@ -18,7 +18,7 @@ const Navbar = ({ data }) => {
             src={avatarURL}
             alt="avatar"
             className="avatar"
-            title={`${data.firstName} ${data.lastName}`}
+            title={`${user.firstName} ${user.lastName}`}
           />
         </div>
       </div>

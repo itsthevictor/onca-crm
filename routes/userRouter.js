@@ -5,11 +5,12 @@ import {
   updateUser,
   activateAccount,
 } from "../controllers/userController.js";
+import { authenticateUser } from "../middleware/authMiddleware.js";
 const router = Router();
 
-router.get("/current-user", getCurrentUser);
+router.get("/current-user", authenticateUser, getCurrentUser);
 router.patch("/activate-user", activateAccount);
-router.get("/app-stats", getApplicationStats);
-router.patch("/update-user", updateUser);
+router.get("/app-stats", authenticateUser, getApplicationStats);
+router.patch("/update-user", authenticateUser, updateUser);
 
 export default router;

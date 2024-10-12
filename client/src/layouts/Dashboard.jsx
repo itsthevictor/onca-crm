@@ -2,39 +2,33 @@ import { Outlet, useLoaderData } from "react-router-dom";
 import { Navbar, Menu } from "../components";
 import axios from "axios";
 import Wrapper from "../assets/wrappers/Dashboard";
+import { mainFetch } from "../utils/customFetch";
 
 export const dashboardLoader = async () => {
-  // try {
-  //   const { data } = await axios.get(
-  //     `https://randommer.io/api/Name?nameType=fullname&quantity=1`,
-  //     {
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //         "X-Api-Key": "99c18ce9e984478282c1f74e6277df0a",
-  //       },
-  //     }
-  //   );
-  //   return data;
-  // } catch (error) {
-  //   console.log(error);
-  //   return null;
-  // }
+  try {
+    const { data } = await mainFetch.get(`/users/current-user`);
+    const { user } = data;
+    return user;
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
 
   return null;
 };
 
 const Dashboard = () => {
-  // const data = useLoaderData();
-  const data = { firstName: "Lewis", lastName: "Hamilton" };
+  const user = useLoaderData();
+  console.log(user);
 
   return (
     <Wrapper>
       <main>
-        <Navbar data={data} />
+        <Navbar user={user} />
         <section className="dashboard-container">
           <Menu />
           <div className="dashboard-page">
-            <Outlet />
+            <Outlet user={user} />
           </div>
         </section>
       </main>
