@@ -1,4 +1,4 @@
-import { Outlet, useLoaderData } from "react-router-dom";
+import { Outlet, useLoaderData, redirect } from "react-router-dom";
 import { Navbar, Menu } from "../components";
 import axios from "axios";
 import Wrapper from "../assets/wrappers/Dashboard";
@@ -11,10 +11,8 @@ export const dashboardLoader = async () => {
     return user;
   } catch (error) {
     console.log(error);
-    return null;
+    return redirect("/autentificare");
   }
-
-  return null;
 };
 
 const Dashboard = () => {
