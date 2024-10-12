@@ -89,7 +89,8 @@ const Wrapper = styled.div`
               text-align: center;
               cursor: pointer;
               background: var(--grey-100);
-              color: var(--blue-200);
+              color: var(--grey-300);
+              transition: all 0.25s ease;
             }
 
             .radio-label:not(last-of-type) {
@@ -108,7 +109,7 @@ const Wrapper = styled.div`
 
             input[type="radio"]:checked + label {
               background: var(--blue-200);
-              color: var(--primary-100);
+              color: var(--primary-000);
               font-weight: 500;
             }
           }

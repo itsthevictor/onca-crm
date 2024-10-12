@@ -39,6 +39,7 @@
   --blue-500: #000934;
 
   /*primary */
+  --primary-000: #00ffdd;
   --primary-100: #06cdb3;
   --primary-200: #04a28e;
   --primary-300: #046f61;
@@ -47,6 +48,7 @@
   /* greys */
   --grey-100: #e1e3e9;
   --grey-200: #a1a5ae;
+  --grey-300: #63666c;
 
   /* dimensions */
   --nav-height: 60px;

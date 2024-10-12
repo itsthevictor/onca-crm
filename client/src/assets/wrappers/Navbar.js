@@ -28,13 +28,47 @@ const Wrapper = styled.nav`
   }
 
   .search-box {
-    padding: 8px;
+    height: 90%;
     width: 350px;
     border-radius: var(--round-sm);
     background: var(--blue-200);
     border: none;
     outline: none;
-    color: var(--grey-100);
+    color: var(--grey-200);
+    display: flex;
+    align-items: center;
+    transition: all 0.2s ease;
+
+    &.selected {
+      color: var(--grey-100);
+    }
+
+    select,
+    option {
+      padding: 5px;
+      color: inherit;
+      border-radius: var(--round-sm);
+      background: var(--blue-200);
+      border: none;
+      outline: none;
+    }
+    .search-input {
+      width: 100%;
+      padding: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border-radius: var(--round-sm);
+      background: var(--blue-200);
+      border: none;
+      outline: none;
+      color: var(--grey-100);
+      position: relative;
+    }
+
+    .search-icon {
+      margin-right: 5px;
+      margin-bottom: -2px;
+    }
   }
   .status {
     padding-left: 70px;

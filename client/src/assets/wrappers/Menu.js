@@ -10,7 +10,8 @@ const Wrapper = styled.div`
     background: var(--blue-500);
     height: calc(100vh - var(--nav-height));
     width: fit-content;
-    padding: 30px;
+    padding: 20px 30px 20px 20px;
+
     color: var(--grey-100);
 
     .row {
