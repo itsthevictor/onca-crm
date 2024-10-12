@@ -17,6 +17,7 @@ import { authenticateUser } from "./middleware/authMiddleware.js";
 // import routes
 import authRouter from "./routes/authRouter.js";
 import partnerRouter from "./routes/partnerRouter.js";
+import userRouter from "./routes/userRouter.js";
 
 // middleware
 if (process.env.NODE_ENV === "development") {
@@ -26,6 +27,7 @@ app.use(cookieParser());
 app.use(express.json());
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/partners", authenticateUser, partnerRouter);
+app.use("/api/v1/users", userRouter);
 
 app.use("*", (req, res) => {
   res.status(404).json({ msg: "not found" });
