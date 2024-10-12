@@ -81,3 +81,27 @@
   display: flex;
   align-items: center;
 }
+
+.submit-btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: var(--round-sm);
+  border: none;
+  outline: none;
+  background: var(--primary-200);
+  color: var(--grey-100);
+  font-size: 1.15em;
+  font-weight: 500;
+  cursor: pointer;
+  max-width: 300px;
+}
+
+.submit-btn:hover {
+  background: var(--primary-100);
+}
+
+.submit-btn.disabled {
+  background: var(--grey-200);
+  /* color: var(--blue-500); */
+  cursor: not-allowed;
+}

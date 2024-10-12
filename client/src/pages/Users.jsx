@@ -5,7 +5,7 @@ const Users = () => {
     <Wrapper>
       <div className="container">Users list</div>
       <Link to="/adauga-user">
-        <button>add user</button>
+        <button className="submit-btn">add user</button>
       </Link>
     </Wrapper>
   );
