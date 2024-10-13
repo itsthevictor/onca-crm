@@ -25,7 +25,6 @@ function App() {
       loader: dashboardLoader,
       children: [
         {
-          path: "overview",
           element: <Overview />,
           index: true,
         },
