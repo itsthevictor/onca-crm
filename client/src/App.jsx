@@ -10,6 +10,12 @@ import VerifyEmail, {
   verifyEmailAction,
   verifyEmailLoader,
 } from "./pages/VerifyEmail";
+import Leads from "./pages/Leads";
+import Clients from "./pages/Clients";
+import Programmes from "./pages/Programmes";
+import Reports from "./pages/Reports";
+import Overview from "./pages/Overview";
+import Admin from "./pages/Admin";
 
 function App() {
   const router = createBrowserRouter([
@@ -19,17 +25,42 @@ function App() {
       loader: dashboardLoader,
       children: [
         {
+          path: "overview",
+          element: <Overview />,
+          index: true,
+        },
+        {
           path: "partners",
           element: <Partners />,
         },
         {
-          path: "personal",
+          path: "useri",
           element: <Users />,
         },
         {
           path: "adauga-user",
           element: <AddUser />,
           action: addUserAction,
+        },
+        {
+          path: "leads",
+          element: <Leads />,
+        },
+        {
+          path: "clienti",
+          element: <Clients />,
+        },
+        {
+          path: "masuri",
+          element: <Programmes />,
+        },
+        {
+          path: "rapoarte",
+          element: <Reports />,
+        },
+        {
+          path: "admin",
+          element: <Admin />,
         },
       ],
     },

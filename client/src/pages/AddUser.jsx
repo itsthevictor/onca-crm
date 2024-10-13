@@ -10,7 +10,7 @@ export const addUserAction = async ({ request }) => {
   try {
     await mainFetch.post("/auth/register", data);
     toast.success("user registered");
-    return redirect("/personal");
+    return redirect("/useri");
   } catch (error) {
     return toast.error(error?.response?.data?.msg);
   }

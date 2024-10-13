@@ -3,26 +3,31 @@ import styled from "styled-components";
 const Wrapper = styled.div`
   .sidebar-container {
     /* display: none; */
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
 
     background: var(--blue-500);
     height: calc(100vh - var(--nav-height));
     width: fit-content;
-    padding: 20px 30px 20px 20px;
+    padding: 15px 25px 15px 15px;
 
     color: var(--grey-100);
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
 
     .row {
       display: flex;
 
       a {
+        display: flex;
+        align-items: center;
         border-radius: var(--round-sm);
         padding: 5px 10px;
         color: var(--blue-50);
         text-decoration: none;
         transition: all 0.2s ease;
+        text-transform: capitalize;
 
         &:hover {
           color: var(--primary-100);
@@ -32,6 +37,11 @@ const Wrapper = styled.div`
           background: var(--blue-200);
           color: var(--primary-100);
           /* font-weight: 500; */
+        }
+
+        span {
+          margin-right: 10px;
+          margin-bottom: -2px;
         }
       }
     }
