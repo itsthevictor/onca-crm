@@ -41,7 +41,7 @@ const Wrapper = styled.div`
 
         span {
           margin-right: 10px;
-          margin-bottom: -3px;
+          margin-bottom: -5px;
         }
       }
     }

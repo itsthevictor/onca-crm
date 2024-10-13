@@ -10,14 +10,14 @@ const links = [
   {
     text: "overview",
     path: ".",
-    icon: <RiDashboardHorizontalFill size={16} />,
+    icon: <RiDashboardHorizontalFill size={18} />,
   },
-  { text: "leaduri", path: "leads", icon: <MdGroupAdd size={16} /> },
-  { text: "clienți", path: "clienti", icon: <FaHandshake size={16} /> },
-  { text: "măsuri", path: "masuri", icon: <RiFileList2Fill size={16} /> },
-  { text: "rapoarte", path: "rapoarte", icon: <MdInsertChart size={16} /> },
-  { text: "useri", path: "useri", icon: <HiMiniUserGroup size={16} /> },
-  { text: "admin", path: "admin", icon: <MdAdminPanelSettings size={16} /> },
+  { text: "leaduri", path: "leads", icon: <MdGroupAdd size={18} /> },
+  { text: "clienți", path: "clienti", icon: <FaHandshake size={18} /> },
+  { text: "măsuri", path: "masuri", icon: <RiFileList2Fill size={18} /> },
+  { text: "rapoarte", path: "rapoarte", icon: <MdInsertChart size={18} /> },
+  { text: "useri", path: "useri", icon: <HiMiniUserGroup size={18} /> },
+  { text: "admin", path: "admin", icon: <MdAdminPanelSettings size={18} /> },
 ];
 
 export default links;
