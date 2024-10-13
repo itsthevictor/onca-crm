@@ -32,6 +32,7 @@
   /* colors */
   --blue-000: #d5f4ff;
   --blue-50: #c7e2ff;
+  --blue-600: #1753eb;
   --blue-100: #0443e1;
   --blue-200: #1f274c;
   --blue-300: #1a2247;
@@ -82,6 +83,18 @@
   align-items: center;
 }
 
+.add-btn {
+  cursor: pointer;
+  padding: 7px 10px;
+  background: var(--blue-100);
+  border: none;
+  border-radius: var(--round-sm);
+  color: white;
+  vertical-align: middle;
+}
+.add-btn:hover {
+  background: var(--blue-600);
+}
 .submit-btn {
   width: 100%;
   padding: 10px;

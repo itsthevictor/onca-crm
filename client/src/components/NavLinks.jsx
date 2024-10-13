@@ -4,12 +4,12 @@ import { NavLink } from "react-router-dom";
 const NavLinks = () => {
   return (
     <div className="nav-links">
-      {links.map((link) => {
+      {links.map((link, i) => {
         const { text, path, icon } = link;
         // const { role } = user;
         // if (path === "admin" && role !== "admin") return;
         return (
-          <div className="row">
+          <div className="row" key={i}>
             <NavLink
               to={path}
               key={text}
