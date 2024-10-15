@@ -15,13 +15,13 @@ const Wrapper = styled.section`
         display: flex;
       }
       display: grid;
-      grid-template-columns: 180px auto;
+      grid-template-columns: 165px auto;
     }
 
     .dashboard-page {
       width: 100%;
       /* margin: 0 auto; */
-      padding: 1rem 0;
+      padding: 1rem 0.5rem;
       max-height: calc(100vh - var(--nav-height));
       /* overflow-y: scroll; */
     }

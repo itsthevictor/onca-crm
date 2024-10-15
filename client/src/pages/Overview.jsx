@@ -25,7 +25,13 @@ const Overview = () => {
             title={"Încasări"}
             variation={0}
             value={45380}
-          />
+          />{" "}
+          <CardComponent
+            type={"variation"}
+            title={"leads"}
+            variation={8}
+            value={16}
+          />{" "}
         </div>
       </div>
     </Wrapper>

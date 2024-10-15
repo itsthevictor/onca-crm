@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
   .page-container {
-    padding-right: 10px;
+    /* padding-right: 10px; */
     max-width: calc(100vw - 190px);
     /* background: chartreuse; */
     .title h3 {
@@ -11,7 +11,7 @@ const Wrapper = styled.div`
 
     .content {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       grid-gap: 10px;
     }
   }
