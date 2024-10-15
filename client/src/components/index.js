@@ -6,3 +6,4 @@ export { default as SetPasswordForm } from "./SetPasswordForm";
 export { default as NavLinks } from "./NavLinks";
 export { default as AddButton } from "./AddButton";
 export { default as SubmitButton } from "./SubmitButton";
+export { default as CardComponent } from "./CardComponent";
