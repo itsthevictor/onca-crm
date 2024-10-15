@@ -40,16 +40,21 @@
   --blue-500: #000934;
 
   /*primary */
+  --primary-0: #ecfefb;
   --primary-000: #00ffdd;
   --primary-100: #06cdb3;
   --primary-200: #04a28e;
   --primary-300: #046f61;
-  --profile: #e2c5f0;
+  --primary-400: #027d60;
 
   /* greys */
   --grey-100: #e1e3e9;
   --grey-200: #a1a5ae;
   --grey-300: #63666c;
+
+  /* reds & errors */
+  --red-000: #ffe5e4;
+  --red-100: #ac000e;
 
   /* dimensions */
   --nav-height: 60px;
@@ -117,4 +122,12 @@
   background: var(--grey-200);
   /* color: var(--blue-500); */
   cursor: not-allowed;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  text-transform: capitalize;
 }
