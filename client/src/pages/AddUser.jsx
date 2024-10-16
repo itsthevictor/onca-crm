@@ -111,7 +111,7 @@ const AddUser = () => {
                   defaultChecked
                 />
                 <label htmlFor="temp" className="radio-label">
-                  account
+                  temp.
                 </label>
               </div>
             </div>
