@@ -1,8 +1,15 @@
-import { Outlet, useLoaderData, redirect } from "react-router-dom";
+import {
+  Outlet,
+  useLoaderData,
+  useNavigate,
+  useNavigation,
+} from "react-router-dom";
 import { Navbar, Menu } from "../components";
-import axios from "axios";
+
 import Wrapper from "../assets/wrappers/Dashboard";
 import { mainFetch } from "../utils/customFetch";
+import { createContext, useContext, useState } from "react";
+const DashboardContext = createContext();
 
 export const dashboardLoader = async () => {
   try {
@@ -18,20 +25,36 @@ export const dashboardLoader = async () => {
 
 const Dashboard = () => {
   const user = useLoaderData();
-  console.log(user);
+
+  const navigation = useNavigation();
+  const navigate = useNavigate();
+
+  const logOutUser = async () => {
+    navigate("/");
+    await customFetch.get("/auth/logout");
+    toast.success("logging out");
+  };
 
   return (
-    <Wrapper>
-      <main>
-        <Navbar user={user} />
-        <section className="dashboard-container">
-          <Menu />
-          <div className="dashboard-page">
-            <Outlet user={user} />
-          </div>
-        </section>
-      </main>
-    </Wrapper>
+    <DashboardContext.Provider
+      value={{
+        user,
+        logOutUser,
+      }}
+    >
+      <Wrapper>
+        <main>
+          <Navbar />
+          <section className="dashboard-container">
+            <Menu />
+            <div className="dashboard-page">
+              <Outlet />
+            </div>
+          </section>
+        </main>
+      </Wrapper>
+    </DashboardContext.Provider>
   );
 };
+export const useDashboardContext = () => useContext(DashboardContext);
 export default Dashboard;
