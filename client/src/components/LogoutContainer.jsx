@@ -7,12 +7,18 @@ const LogoutContainer = () => {
   const { user, logOutUser } = useDashboardContext();
   const [showLogout, setShowLogout] = useState(false);
   const avatarURL = `https://avatar.iran.liara.run/username?username=${user.firstName}+${user.lastName}`;
+
   return (
     <Wrapper>
       <button
         type="button"
         className="btn user-btn"
-        onClick={() => setShowLogout(!showLogout)}
+        onClick={() => {
+          setShowLogout(!showLogout);
+          setTimeout(() => {
+            setShowLogout(false);
+          }, 5000);
+        }}
       >
         {" "}
         <img
