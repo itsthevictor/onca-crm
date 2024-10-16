@@ -15,7 +15,9 @@ export const PARTNER_SUFFIX = {
 };
 
 export const USER_ROLES = {
-  ACCOUNT: "account",
-  OFFICER: "officer",
   ADMIN: "admin",
+  OFFICER: "officer",
+  ACCOUNT: "account",
+
+  TEMP: "temporar",
 };
