@@ -5,7 +5,7 @@ const Users = () => {
   return (
     <Wrapper>
       <div className="container">Users list</div>
-      <Link to="/adauga-user">
+      <Link to="adauga-user">
         <AddButton text="adaugă user" />
       </Link>
     </Wrapper>

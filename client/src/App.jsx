@@ -37,7 +37,7 @@ function App() {
           element: <Users />,
         },
         {
-          path: "adauga-user",
+          path: "/useri/adauga-user",
           element: <AddUser />,
           action: addUserAction,
         },
