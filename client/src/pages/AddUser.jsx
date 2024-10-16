@@ -87,6 +87,7 @@ const AddUser = () => {
                   id="officer"
                   value="officer"
                   className="radio-input"
+                  defaultChecked
                 />
                 <label htmlFor="officer" className="radio-label">
                   officer
@@ -97,7 +98,6 @@ const AddUser = () => {
                   id="account"
                   className="radio-input"
                   value="account"
-                  defaultChecked
                 />
                 <label htmlFor="account" className="radio-label">
                   account
