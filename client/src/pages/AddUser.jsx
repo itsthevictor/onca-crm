@@ -108,7 +108,6 @@ const AddUser = () => {
                   id="temp"
                   className="radio-input"
                   value="temporar"
-                  defaultChecked
                 />
                 <label htmlFor="temp" className="radio-label">
                   temp
