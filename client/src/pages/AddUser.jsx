@@ -74,19 +74,12 @@ const AddUser = () => {
                 <input
                   type="radio"
                   name="role"
-                  id="account"
+                  id="admin"
+                  value="admin"
                   className="radio-input"
-                  value="account"
-                  defaultChecked
-                  // onClick={(e) =>
-                  //   setUserData({
-                  //     ...userData,
-                  //     role: e.target.value,
-                  //   })
-                  // }
                 />
-                <label htmlFor="account" className="radio-label">
-                  account
+                <label htmlFor="admin" className="radio-label">
+                  admin
                 </label>
                 <input
                   type="radio"
@@ -94,12 +87,6 @@ const AddUser = () => {
                   id="officer"
                   value="officer"
                   className="radio-input"
-                  // onClick={(e) =>
-                  //   setUserData({
-                  //     ...userData,
-                  //     role: e.target.value,
-                  //   })
-                  // }
                 />
                 <label htmlFor="officer" className="radio-label">
                   officer
@@ -107,18 +94,24 @@ const AddUser = () => {
                 <input
                   type="radio"
                   name="role"
-                  id="admin"
-                  value="admin"
+                  id="account"
                   className="radio-input"
-                  // onClick={(e) =>
-                  //   setLeaseData({
-                  //     ...userData,
-                  //     maanden: Number(e.target.value),
-                  //   })
-                  // }
+                  value="account"
+                  defaultChecked
                 />
-                <label htmlFor="admin" className="radio-label">
-                  admin
+                <label htmlFor="account" className="radio-label">
+                  account
+                </label>
+                <input
+                  type="radio"
+                  name="role"
+                  id="temp"
+                  className="radio-input"
+                  value="temporar"
+                  defaultChecked
+                />
+                <label htmlFor="temp" className="radio-label">
+                  account
                 </label>
               </div>
             </div>
