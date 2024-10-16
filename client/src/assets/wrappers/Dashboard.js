@@ -2,10 +2,11 @@ import styled from "styled-components";
 
 const Wrapper = styled.section`
   .dashboard-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    height: 100vh;
-    max-height: calc(100vh - var(--nav-height));
+    /* display: grid;
+    grid-template-columns: 1fr; */
+    /* height: 100vh; */
+    min-height: calc(100vh - var(--nav-height));
+    overflow-y: scroll;
     .sidebar-container {
       display: none;
     }

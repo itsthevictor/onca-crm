@@ -13,7 +13,7 @@ import { fileURLToPath } from "url";
 dotenv.config();
 const app = express();
 
-// path setup and clend build in public
+// path setup and client build in public
 const __dirname = dirname(fileURLToPath(import.meta.url));
 app.use(express.static(path.resolve(__dirname, "./client/dist")));
 
