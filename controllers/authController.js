@@ -7,6 +7,8 @@ import crypto from "crypto";
 import { sendVerificationEmail } from "../utils/sendVerificationEmail.js";
 
 export const register = async (req, res) => {
+  console.log(req.user);
+
   //  create verification token
   req.body.verificationToken = crypto.randomBytes(40).toString("hex");
 

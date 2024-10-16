@@ -10,9 +10,16 @@ import {
   validateUserInput,
 } from "../middleware/validationMiddleware.js";
 
+import {
+  authenticateUser,
+  authorizePermissions,
+} from "../middleware/authMiddleware.js";
+
 const router = Router();
 
-router.route("/register").post(validateUserInput, register);
+router
+  .route("/register")
+  .post(authenticateUser, authorizePermissions(), validateUserInput, register);
 router.route("/verify-email").post(verifyEmail);
 router.route("/login").post(validateLoginInput, login);
 router.route("/logout").get(logout);
