@@ -7,6 +7,7 @@ const Wrapper = styled.div`
     align-items: start;
     justify-content: center;
     margin-left: 1em;
+    user-select: none;
     .page-title {
       margin-bottom: 20px;
     }
