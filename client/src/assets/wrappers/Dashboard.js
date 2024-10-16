@@ -6,7 +6,7 @@ const Wrapper = styled.section`
     grid-template-columns: 1fr; */
     /* height: 100vh; */
     min-height: calc(100vh - var(--nav-height));
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
     .sidebar-container {
       display: none;
     }

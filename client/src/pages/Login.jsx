@@ -2,16 +2,17 @@ import { Logo } from "../components";
 import { Form, Link, redirect } from "react-router-dom";
 import Wrapper from "../assets/wrappers/Login";
 import { mainFetch } from "../utils/customFetch";
+import { toast } from "react-toastify";
 
 export const loginAction = async ({ request }) => {
   const formData = await request.formData();
   const data = Object.fromEntries(formData);
   try {
     await mainFetch.post("/auth/login", data);
-    //  toast.success("Signed in");
+    toast.success("Signed in");
     return redirect("/");
   } catch (error) {
-    //  toast.error(error?.response?.data?.msg);
+    toast.error(error?.response?.data?.msg);
     console.log(error);
     return error;
   }

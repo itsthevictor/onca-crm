@@ -75,10 +75,6 @@ const Wrapper = styled.nav`
     display: flex;
     align-items: center;
   }
-  .avatar {
-    width: 30px;
-    height: 30px;
-  }
 
   /* .toggle-btn {
     background: transparent;

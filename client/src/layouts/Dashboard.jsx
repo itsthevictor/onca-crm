@@ -3,36 +3,38 @@ import {
   useLoaderData,
   useNavigate,
   useNavigation,
+  redirect,
 } from "react-router-dom";
 import { Navbar, Menu } from "../components";
 
 import Wrapper from "../assets/wrappers/Dashboard";
 import { mainFetch } from "../utils/customFetch";
 import { createContext, useContext, useState } from "react";
+import { toast } from "react-toastify";
 const DashboardContext = createContext();
 
 export const dashboardLoader = async () => {
   try {
     const { data } = await mainFetch.get(`/users/current-user`);
     const { user } = data;
+    if (!user) {
+      return redirect("/autentificare");
+    }
     return user;
   } catch (error) {
-    console.log(error);
-    return { firstName: "Victor", lastName: "Alexa", role: "admin" };
-    // return redirect("/autentificare");
+    return redirect("/autentificare");
   }
 };
 
 const Dashboard = () => {
   const user = useLoaderData();
-
   const navigation = useNavigation();
   const navigate = useNavigate();
 
   const logOutUser = async () => {
-    navigate("/");
-    await customFetch.get("/auth/logout");
-    toast.success("logging out");
+    navigate("/autentificare");
+    await mainFetch.get("/auth/logout");
+    toast.success("logged out");
   };
 
   return (
