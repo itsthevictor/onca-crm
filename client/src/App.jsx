@@ -16,7 +16,7 @@ import Programmes from "./pages/Programmes";
 import Reports from "./pages/Reports";
 import Overview from "./pages/Overview";
 import Admin from "./pages/Admin";
-import Companies from "./pages/Companies";
+import Companies, { companiesAction, companiesLoader } from "./pages/Companies";
 
 function App() {
   const router = createBrowserRouter([
@@ -65,6 +65,8 @@ function App() {
         {
           path: "/admin/companii",
           element: <Companies />,
+          action: companiesAction,
+          loader: companiesLoader,
         },
       ],
     },

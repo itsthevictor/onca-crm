@@ -103,20 +103,22 @@
 }
 .submit-btn {
   width: 100%;
-  padding: 10px;
   border-radius: var(--round-sm);
   border: none;
   outline: none;
-  background: var(--primary-200);
-  color: var(--grey-100);
+  background: var(--primary-300);
+  color: white;
   font-size: 1.15em;
   font-weight: 500;
   cursor: pointer;
   max-width: 300px;
+  max-height: 40px;
+  transition: all 0.2s ease;
 }
 
 .submit-btn:hover {
-  background: var(--primary-100);
+  background: var(--primary-200);
+  color: #000000;
 }
 
 .submit-btn.disabled {
