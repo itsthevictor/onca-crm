@@ -25,6 +25,7 @@ import { authenticateUser } from "./middleware/authMiddleware.js";
 import authRouter from "./routes/authRouter.js";
 import partnerRouter from "./routes/partnerRouter.js";
 import userRouter from "./routes/userRouter.js";
+import companyRouter from "./routes/companyRouter.js";
 
 // middleware
 if (process.env.NODE_ENV === "development") {
@@ -35,6 +36,7 @@ app.use(express.json());
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/partners", authenticateUser, partnerRouter);
 app.use("/api/v1/users", userRouter);
+app.use("/api/v1/companies", authenticateUser, companyRouter);
 
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "./client/dist", "index.html"));

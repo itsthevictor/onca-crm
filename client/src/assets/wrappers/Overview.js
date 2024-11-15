@@ -4,7 +4,7 @@ const Wrapper = styled.div`
   .page-container {
     width: 100%;
     max-width: calc(100vw - 190px);
-
+ 
     @media (max-width: 992px) {
       max-width: 100%;
     }

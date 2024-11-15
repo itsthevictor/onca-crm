@@ -28,9 +28,9 @@ const Overview = () => {
           />{" "}
           <CardComponent
             type={"variation"}
-            title={"leads"}
-            variation={8}
-            value={16}
+            title={"contracte noi"}
+            variation={25}
+            value={4}
           />{" "}
         </div>
       </div>

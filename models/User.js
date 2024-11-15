@@ -14,13 +14,13 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-
   password: String,
   role: {
     type: String,
     enum: Object.values(USER_ROLES),
     default: USER_ROLES.ACCOUNT,
   },
+  activeCompanies: [],
   verificationToken: {
     type: String,
   },
