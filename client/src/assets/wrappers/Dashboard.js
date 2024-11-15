@@ -18,7 +18,7 @@ const Wrapper = styled.section`
 
     .dashboard-page {
       width: 100%;
-      padding: 1rem 0.5rem;
+      padding: 0.5rem;
       max-height: calc(100vh - var(--nav-height));
     }
   }

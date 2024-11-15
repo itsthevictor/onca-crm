@@ -24,7 +24,7 @@ const Wrapper = styled.div`
         display: flex;
         align-items: center;
         border-radius: var(--round-sm);
-        padding: 5px 15px;
+        padding: 5px 15px 5px 10px;
         color: var(--blue-50);
         text-decoration: none;
         transition: all 0.2s ease;
@@ -55,10 +55,10 @@ const Wrapper = styled.div`
 
       .nav-link.active + .submenu,
       .submenu:has(> a.active) {
+        color: var(--blue-50);
         width: 100%;
         display: flex;
         flex-direction: column;
-        color: var(--grey-100);
         transition: all 0.2s ease-in-out;
         animation: smooth-appear 0.5s ease forwards;
         bottom: -100%;
@@ -75,11 +75,17 @@ const Wrapper = styled.div`
           font-size: 0.9rem;
           border-left: 2px solid transparent;
           text-transform: capitalize;
-          color: var(--grey-200);
+          color: var(--blue-50);
+          opacity: 0.7;
 
           .icon {
             margin-right: 5px;
             margin-bottom: -5px;
+          }
+
+          &:hover {
+            color: var(--primary-100);
+            opacity: 0.85;
           }
 
           &.active {
@@ -87,6 +93,7 @@ const Wrapper = styled.div`
             border-radius: 0;
             background: var(--blue-200);
             color: var(--primary-100);
+            opacity: 1;
           }
         }
       }
