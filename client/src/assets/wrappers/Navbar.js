@@ -19,6 +19,7 @@ const Wrapper = styled.nav`
     width: 30px;
   }
   .logo-container {
+    margin-left: -5px;
     gap: 10px;
   }
   .logo-text {
