@@ -49,7 +49,7 @@ const Companies = () => {
           {tab === "#lista" && (
             <div className="list">
               <div className="title">
-                <h3>Adaugă companie nouă</h3>
+                <h3>Companii proprii</h3>
                 <a
                   className="add-btn"
                   href="#adauga-companie"

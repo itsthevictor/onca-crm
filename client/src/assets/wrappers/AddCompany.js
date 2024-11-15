@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
   padding-right: 1rem;
+  z-index: 1;
   .title {
     display: flex;
     justify-content: space-between;
@@ -19,7 +20,7 @@ const Wrapper = styled.div`
       padding: 2rem;
       margin-top: 1rem;
       border: 1px solid var(--grey-200);
-      border-radius: var(--round-lg);
+      border-radius: var(--round-sm);
       position: relative;
 
       .form-row {

@@ -3,6 +3,7 @@ import styled from "styled-components";
 const Wrapper = styled.section`
   .dashboard-container {
     min-height: calc(100vh - var(--nav-height));
+    z-index: 1;
 
     .sidebar-container {
       display: none;

@@ -27,9 +27,8 @@ export const dashboardLoader = async () => {
 };
 
 const Dashboard = () => {
-  const [activeCompany, setActiveCompany] = useState("");
+  const [activeCompany, setActiveCompany] = useState("default company");
   const user = useLoaderData();
-  const navigation = useNavigation();
   const navigate = useNavigate();
 
   const logOutUser = async () => {
@@ -44,6 +43,7 @@ const Dashboard = () => {
         user,
         logOutUser,
         activeCompany,
+        setActiveCompany,
       }}
     >
       <Wrapper>

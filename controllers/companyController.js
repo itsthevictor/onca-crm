@@ -1,11 +1,14 @@
 import Company from "../models/Company.js";
+import StatusCodes from "http-status-codes";
 
 export const createCompany = async (req, res) => {
-  res.send("created company");
+  const company = await Company.create(req.body);
+  res.status(StatusCodes.CREATED).json({ company });
 };
 
 export const getAllCompanies = async (req, res) => {
-  res.send("all companies");
+  const companies = await Company.find();
+  res.status(StatusCodes.OK).json({ companies });
 };
 
 export const getSingleCompany = async (req, res) => {

@@ -29,46 +29,52 @@ const Wrapper = styled.nav`
   }
 
   .search-box {
+    cursor: pointer;
+    padding: 5px;
     height: 90%;
     width: 350px;
+    border: none;
     border-radius: var(--round-sm);
     background: var(--blue-200);
-    border: none;
     outline: none;
-    color: var(--grey-200);
+    color: var(--primary-100);
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    font-weight: 600;
     transition: all 0.2s ease;
+    z-index: 999;
 
-    &.selected {
-      color: var(--grey-100);
-    }
-
-    select,
-    option {
+    .options {
+      margin-top: 80px;
+      border-radius: var(--round-sm);
+      color: var(--grey-200);
       padding: 5px;
-      color: inherit;
-      border-radius: var(--round-sm);
-      background: var(--blue-200);
-      border: none;
-      outline: none;
-    }
-    .search-input {
-      width: 100%;
-      padding: 8px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      border-radius: var(--round-sm);
-      background: var(--blue-200);
-      border: none;
-      outline: none;
-      color: var(--grey-100);
-      position: relative;
-    }
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 350px;
+      background: var(--blue-500);
+      z-index: 999;
 
-    .search-icon {
-      margin-right: 5px;
-      margin-bottom: -2px;
+      button {
+        cursor: pointer;
+        outline: none;
+        border: none;
+        background: inherit;
+        text-align: center;
+        width: 100%;
+        color: var(--grey-200);
+        padding: 10px;
+        z-index: 999;
+
+        &:hover {
+          background: var(--blue-300);
+          color: var(--primary-100);
+        }
+      }
     }
   }
   .status {
@@ -76,16 +82,6 @@ const Wrapper = styled.nav`
     display: flex;
     align-items: center;
   }
-
-  /* .toggle-btn {
-    background: transparent;
-    border-color: transparent;
-    font-size: 1.75rem;
-    color: var(--primary-500);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-  } */
 
   @media (min-width: 992px) {
     position: sticky;

@@ -141,3 +141,11 @@ h5 {
     opacity: 1;
   }
 }
+
+select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
