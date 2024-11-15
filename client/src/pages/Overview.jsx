@@ -9,28 +9,30 @@ const Overview = () => {
         </div>
         <div className="content">
           <CardComponent
-            type={"variation"}
-            title={"leads"}
+            type="variation"
+            title="leads"
             variation={8}
             value={16}
           />
           <CardComponent
-            type={"variation"}
-            title={"clienți"}
+            type="variation"
+            title="clienți"
             variation={-2}
             value={4}
           />
           <CardComponent
-            type={"variation"}
-            title={"Încasări"}
-            variation={0}
-            value={45380}
+            type="variation"
+            title="vânzări"
+            variation={20}
+            value={45000}
+            money
           />{" "}
           <CardComponent
-            type={"variation"}
-            title={"contracte noi"}
-            variation={25}
-            value={4}
+            type="variation"
+            title="încasări"
+            variation={14.8}
+            value={23900}
+            money
           />{" "}
         </div>
       </div>

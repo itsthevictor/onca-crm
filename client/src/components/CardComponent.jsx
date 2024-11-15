@@ -1,7 +1,10 @@
 import VariationTag from "./VariationTag";
 import Wrapper from "../assets/wrappers/CardComponent";
+import { formatCurrency } from "../utils/helpers";
 
-const CardComponent = ({ type, variation, value, title }) => {
+const CardComponent = ({ type, variation, value, title, money }) => {
+  console.log(value);
+
   return (
     <Wrapper>
       <div className="card-container">
@@ -10,7 +13,7 @@ const CardComponent = ({ type, variation, value, title }) => {
         </div>
 
         <div className="content">
-          <span>{value}</span>
+          <span>{money ? formatCurrency(value, 0) : value}</span>
         </div>
         <div className="footer">
           {type === "variation" ? <VariationTag props={variation} /> : null}
