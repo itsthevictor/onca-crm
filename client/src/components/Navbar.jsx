@@ -6,9 +6,14 @@ import { useDashboardContext } from "../layouts/Dashboard";
 import { LogoutContainer } from ".";
 import { useState } from "react";
 const Navbar = () => {
-  const { user, logOutUser, activeCompany, setActiveCompany } =
-    useDashboardContext();
-  const [selectCompany, setSelectCompany] = useState(false);
+  const {
+    user,
+    logOutUser,
+    activeCompany,
+    setActiveCompany,
+    setSelectCompany,
+    selectCompany,
+  } = useDashboardContext();
 
   return (
     <Wrapper>
@@ -17,57 +22,11 @@ const Navbar = () => {
           <Logo />
         </div>
         <div className="search">
-          <div className="search-box">
-            <div
-              class="active-company"
-              onClick={() => setSelectCompany(!selectCompany)}
-            >
-              {activeCompany}
-            </div>
-            {selectCompany && (
-              <div class="options">
-                <button
-                  className="option"
-                  value="hai sincer"
-                  onClick={(e) => {
-                    setActiveCompany(e.target.value);
-                    setSelectCompany(false);
-                  }}
-                >
-                  hai sincer
-                </button>
-                <button
-                  className="option"
-                  value="foaie verde"
-                  onClick={(e) => {
-                    setActiveCompany(e.target.value);
-                    setSelectCompany(false);
-                  }}
-                >
-                  foaie verde
-                </button>
-                <button
-                  className="option"
-                  value="foaie verde"
-                  onClick={(e) => {
-                    setActiveCompany(e.target.value);
-                    setSelectCompany(false);
-                  }}
-                >
-                  foaie verde
-                </button>
-                <button
-                  className="option"
-                  value="foaie verde"
-                  onClick={(e) => {
-                    setActiveCompany(e.target.value);
-                    setSelectCompany(false);
-                  }}
-                >
-                  foaie verde
-                </button>
-              </div>
-            )}
+          <div
+            className="search-box"
+            onClick={() => setSelectCompany(!selectCompany)}
+          >
+            <div class="active-company">{activeCompany}</div>
           </div>
         </div>
         <div className="status">

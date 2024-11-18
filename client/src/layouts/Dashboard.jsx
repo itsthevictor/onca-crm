@@ -5,7 +5,7 @@ import {
   useNavigation,
   redirect,
 } from "react-router-dom";
-import { Navbar, Menu } from "../components";
+import { Navbar, Menu, SelectCompany } from "../components";
 
 import Wrapper from "../assets/wrappers/Dashboard";
 import { mainFetch } from "../utils/customFetch";
@@ -28,6 +28,7 @@ export const dashboardLoader = async () => {
 
 const Dashboard = () => {
   const [activeCompany, setActiveCompany] = useState("default company");
+  const [selectCompany, setSelectCompany] = useState(false);
   const user = useLoaderData();
   const navigate = useNavigate();
 
@@ -44,11 +45,14 @@ const Dashboard = () => {
         logOutUser,
         activeCompany,
         setActiveCompany,
+        selectCompany,
+        setSelectCompany,
       }}
     >
       <Wrapper>
         <main>
           <Navbar />
+          <SelectCompany />
           <section className="dashboard-container">
             <Menu />
             <div className="dashboard-page">

@@ -29,6 +29,7 @@ const Wrapper = styled.nav`
   }
 
   .search-box {
+    margin-left: 10px;
     cursor: pointer;
     padding: 5px;
     height: 90%;
@@ -39,44 +40,12 @@ const Wrapper = styled.nav`
     outline: none;
     color: var(--primary-100);
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     font-weight: 600;
     transition: all 0.2s ease;
-    z-index: 999;
-
-    .options {
-      margin-top: 80px;
-      border-radius: var(--round-sm);
-      color: var(--grey-200);
-      padding: 5px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 350px;
-      background: var(--blue-500);
-      z-index: 999;
-
-      button {
-        cursor: pointer;
-        outline: none;
-        border: none;
-        background: inherit;
-        text-align: center;
-        width: 100%;
-        color: var(--grey-200);
-        padding: 10px;
-        z-index: 999;
-
-        &:hover {
-          background: var(--blue-300);
-          color: var(--primary-100);
-        }
-      }
-    }
   }
+
   .status {
     padding-left: 70px;
     display: flex;

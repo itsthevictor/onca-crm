@@ -9,3 +9,4 @@ export { default as SubmitButton } from "./SubmitButton";
 export { default as CardComponent } from "./CardComponent";
 export { default as VariationTag } from "./VariationTag";
 export { default as LogoutContainer } from "./LogoutContainer";
+export { default as SelectCompany } from "./SelectCompany";
