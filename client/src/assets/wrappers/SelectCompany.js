@@ -33,7 +33,7 @@ const Wrapper = styled.div`
           text-align: center;
           color: var(--blue-50);
           border-radius: var(--round-sm);
-          padding: 10px;
+          padding: 8px;
           font-size: var(--fs-500);
           text-transform: uppercase;
           transition: all 0.2s ease;

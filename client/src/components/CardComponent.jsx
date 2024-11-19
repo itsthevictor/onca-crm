@@ -1,6 +1,7 @@
 import VariationTag from "./VariationTag";
 import Wrapper from "../assets/wrappers/CardComponent";
 import { formatCurrency } from "../utils/helpers";
+import axios from "axios";
 
 const CardComponent = ({ type, variation, value, title, money }) => {
   console.log(value);

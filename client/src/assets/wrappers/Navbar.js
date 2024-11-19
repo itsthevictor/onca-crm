@@ -32,7 +32,6 @@ const Wrapper = styled.nav`
     margin-left: 10px;
     cursor: pointer;
     padding: 8px;
-    height: 90%;
     width: 350px;
     border: none;
     border-radius: var(--round-sm);

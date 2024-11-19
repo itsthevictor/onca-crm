@@ -11,12 +11,14 @@ import Wrapper from "../assets/wrappers/Dashboard";
 import { mainFetch } from "../utils/customFetch";
 import { createContext, useContext, useState } from "react";
 import { toast } from "react-toastify";
+import axios from "axios";
 const DashboardContext = createContext();
 
 export const dashboardLoader = async () => {
   try {
     const { data } = await mainFetch.get(`/users/current-user`);
     const { user } = data;
+
     if (!user) {
       return redirect("/autentificare");
     }
