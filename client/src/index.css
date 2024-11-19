@@ -58,6 +58,11 @@
 
   /* dimensions */
   --nav-height: 60px;
+  --fs-100: clamp(2rem, 5vw, 5rem);
+  --fs-200: clamp(1.5rem, 3vw, 3rem); /* Medium heading */
+  --fs-300: clamp(1.25rem, 2.5vw, 2.5rem); /* Small heading */
+  --fs-400: clamp(1rem, 2vw, 2rem); /* Extra small heading */
+  --fs-500: clamp(0.75rem, 0.75vw, 1.5rem); /* Tiny heading */
 
   /* border radii */
   --round-sm: 5px;
@@ -132,6 +137,9 @@ h2,
 h3,
 h4,
 h5 {
+  margin: 0;
+  font-weight: 400;
+  line-height: 1;
   text-transform: capitalize;
 }
 

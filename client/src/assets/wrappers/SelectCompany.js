@@ -12,7 +12,7 @@ const Wrapper = styled.div`
     &.show {
       display: flex;
       justify-content: center;
-      align-items: top;
+      align-items: flex-start;
 
       .options {
         width: fit-content;
@@ -20,7 +20,7 @@ const Wrapper = styled.div`
         flex-direction: column;
         background: var(--blue-500);
         height: fit-content;
-        padding: 1rem 2rem;
+        padding: 0.7rem 2rem 1.5rem 2rem;
         border-radius: var(--round-sm);
         gap: 0.5em;
 
@@ -31,23 +31,16 @@ const Wrapper = styled.div`
           border: none;
           background: inherit;
           text-align: center;
-
-          color: var(--grey-200);
+          color: var(--blue-50);
           border-radius: var(--round-sm);
-
           padding: 10px;
-          height: 90%;
-          width: 350px;
-          border: none;
-          outline: none;
-          display: flex;
-          justify-content: center;
-          align-items: center;
+          font-size: var(--fs-500);
+          text-transform: uppercase;
           transition: all 0.2s ease;
 
           &:hover {
-            background: var(--blue-300);
-            color: var(--primary-100);
+            background: var(--blue-200);
+            color: white;
           }
         }
       }
