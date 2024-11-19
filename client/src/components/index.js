@@ -8,5 +8,6 @@ export { default as AddButton } from "./AddButton";
 export { default as SubmitButton } from "./SubmitButton";
 export { default as CardComponent } from "./CardComponent";
 export { default as VariationTag } from "./VariationTag";
-export { default as LogoutContainer } from "./LogoutContainer";
+export { default as Avatar } from "./Avatar";
 export { default as SelectCompany } from "./SelectCompany";
+export { default as UserModal } from "./UserModal";

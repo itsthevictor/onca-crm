@@ -1,10 +1,8 @@
 import Wrapper from "../assets/wrappers/Navbar";
 import Logo from "./Logo";
-import SearchBox from "./SearchBox";
-import { Link } from "react-router-dom";
 import { useDashboardContext } from "../layouts/Dashboard";
-import { LogoutContainer } from ".";
-import { useState } from "react";
+import { Avatar } from "../components";
+
 const Navbar = () => {
   const {
     user,
@@ -13,6 +11,8 @@ const Navbar = () => {
     setActiveCompany,
     setSelectCompany,
     selectCompany,
+    showLogout,
+    setShowLogout,
   } = useDashboardContext();
 
   return (
@@ -30,7 +30,7 @@ const Navbar = () => {
           </div>
         </div>
         <div className="status">
-          <LogoutContainer />
+          <Avatar />
         </div>
       </div>
     </Wrapper>
