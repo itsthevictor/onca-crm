@@ -123,7 +123,6 @@
 
 .submit-btn:hover {
   background: var(--primary-200);
-  color: #000000;
 }
 
 .submit-btn.disabled {

@@ -22,9 +22,14 @@ const Wrapper = styled.div`
         width: 50px;
       }
       .logo-text {
-        font-size: 2em;
+        font-size: 1.75em;
         font-style: italic;
         letter-spacing: 0.04em;
+
+        a {
+          text-decoration: none;
+          color: inherit;
+        }
       }
     }
     .form-container {

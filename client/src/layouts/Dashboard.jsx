@@ -29,7 +29,7 @@ export const dashboardLoader = async () => {
 };
 
 const Dashboard = () => {
-  const [activeCompany, setActiveCompany] = useState("default company");
+  const [activeCompany, setActiveCompany] = useState("InnoZ");
   const [selectCompany, setSelectCompany] = useState(false);
   const [showLogout, setShowLogout] = useState(false);
   const user = useLoaderData();
