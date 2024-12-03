@@ -1,6 +1,7 @@
 import Partner from "../models/Partner.js";
 import { StatusCodes } from "http-status-codes";
-import { NotFoundError } from "../errors/customErrors.js";
+import { BadRequestError, NotFoundError } from "../errors/customErrors.js";
+import axios from "axios";
 
 export const createPartner = async (req, res) => {
   req.body.createdBy = req.user.userId;
@@ -39,4 +40,21 @@ export const updatePartner = async (req, res) => {
 export const deletePartner = async (req, res) => {
   const partner = await Partner.findByIdAndDelete(req.params.id);
   res.status(StatusCodes.OK).json({ msg: `partner removed successfully` });
+};
+
+export const getPartnerData = async (req, res) => {
+  console.log("cui", req.body.cui);
+  const CUI = req.body.cui;
+  try {
+    const { data } = await axios.get(
+      `https://infocui.ro/system/api/data?key=${process.env.INFO_CUI_API}&cui=${CUI}`
+    );
+    if (!data) throw new NotFoundError("no data");
+    console.log(data.data);
+    const partnerData = data.data;
+    res.status(StatusCodes.OK).json({ partnerData });
+  } catch (error) {
+    console.log(error);
+    throw new BadRequestError("something went wrong");
+  }
 };
