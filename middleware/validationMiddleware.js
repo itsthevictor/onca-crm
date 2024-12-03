@@ -4,6 +4,7 @@ import { PARTNER_PREFIX, PARTNER_SUFFIX } from "../utils/constants.js";
 import mongoose from "mongoose";
 import Partner from "../models/Partner.js";
 import User from "../models/User.js";
+import { validateRomanianCIF } from "../utils/cuiUtils.js";
 
 const withValidationErrors = (validateValues) => {
   return [
@@ -69,3 +70,17 @@ export const validateLoginInput = withValidationErrors([
     .withMessage("invalid email format"),
   body("password").notEmpty().withMessage("password is required"),
 ]);
+
+export const validateCuiInput = async (req, res, next) => {
+  const { cui } = req.body;
+  if (!cui) throw new BadRequestError("cui-ul este necesar");
+  try {
+    const validCui = validateRomanianCIF(cui);
+    if (validCui !== true) {
+      throw new BadRequestError(validCui);
+    }
+    next();
+  } catch (error) {
+    throw new BadRequestError("cui-ul nu este valid");
+  }
+};

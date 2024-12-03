@@ -11,13 +11,14 @@ import {
 import {
   validatePartnerInput,
   validateIdParam,
+  validateCuiInput,
 } from "../middleware/validationMiddleware.js";
 
 const router = Router();
 
 router.route("/").post(validatePartnerInput, createPartner).get(getAllPartners);
 router.route("/my-partners").get(getMyPartners);
-router.route("/get-data").post(getPartnerData);
+router.route("/get-data").post(validateCuiInput, getPartnerData);
 router
   .route("/:id")
   .get(validateIdParam, getSinglePartner)

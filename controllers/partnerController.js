@@ -43,14 +43,11 @@ export const deletePartner = async (req, res) => {
 };
 
 export const getPartnerData = async (req, res) => {
-  console.log("cui", req.body.cui);
-  const CUI = req.body.cui;
   try {
     const { data } = await axios.get(
-      `https://infocui.ro/system/api/data?key=${process.env.INFO_CUI_API}&cui=${CUI}`
+      `https://infocui.ro/system/api/data?key=${process.env.INFO_CUI_API}&cui=${req.body.cui}`
     );
     if (!data) throw new NotFoundError("no data");
-    console.log(data.data);
     const partnerData = data.data;
     res.status(StatusCodes.OK).json({ partnerData });
   } catch (error) {
