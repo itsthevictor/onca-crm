@@ -6,7 +6,7 @@ export const sendResetPasswordEmail = async ({
   token,
   origin,
 }) => {
-  const link = `${process.env.ORIGIN}/reset-password/${token}/${email}`;
+  const link = `${process.env.ORIGIN}/resetare-parola/${token}/${email}`;
 
   sgMail.setApiKey(process.env.SENDGRID_API_KEY);
   const msg = {
