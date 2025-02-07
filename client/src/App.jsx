@@ -17,6 +17,7 @@ import Reports from "./pages/Reports";
 import Overview from "./pages/Overview";
 import Admin from "./pages/Admin";
 import Companies, { companiesAction, companiesLoader } from "./pages/Companies";
+import ForgotPassword, { forgotPasswordAction } from "./pages/ForgotPassword";
 
 function App() {
   const router = createBrowserRouter([
@@ -78,6 +79,11 @@ function App() {
     {
       path: "inregistrare",
       element: <Register />,
+    },
+    {
+      path: "am-uitat-parola",
+      element: <ForgotPassword />,
+      action: forgotPasswordAction,
     },
     {
       path: "verify-email/:token?/:email?",
