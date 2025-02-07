@@ -18,6 +18,10 @@ import Overview from "./pages/Overview";
 import Admin from "./pages/Admin";
 import Companies, { companiesAction, companiesLoader } from "./pages/Companies";
 import ForgotPassword, { forgotPasswordAction } from "./pages/ForgotPassword";
+import ResetPassword, {
+  resetPasswordAction,
+  resetPasswordLoader,
+} from "./pages/ResetPassword";
 
 function App() {
   const router = createBrowserRouter([
@@ -84,6 +88,12 @@ function App() {
       path: "am-uitat-parola",
       element: <ForgotPassword />,
       action: forgotPasswordAction,
+    },
+    {
+      path: "resetare-parola/:token?/:email?",
+      element: <ResetPassword />,
+      loader: resetPasswordLoader,
+      action: resetPasswordAction,
     },
     {
       path: "verify-email/:token?/:email?",

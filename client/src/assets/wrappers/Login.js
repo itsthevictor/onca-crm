@@ -18,11 +18,12 @@ const Wrapper = styled.div`
       color: var(--grey-100);
       gap: 10px;
       margin-bottom: 30px;
+
       img {
         width: 50px;
       }
       .logo-text {
-        font-size: 1.75em;
+        font-size: 1.45em;
         font-style: italic;
         letter-spacing: 0.04em;
 
@@ -42,7 +43,6 @@ const Wrapper = styled.div`
         text-align: center;
         color: var(--primary-100);
         margin-bottom: 20px;
-        text-transform: capitalize;
       }
       form {
         width: 100%;
