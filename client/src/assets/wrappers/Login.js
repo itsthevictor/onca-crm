@@ -77,7 +77,7 @@ const Wrapper = styled.div`
         }
 
         a:hover {
-          color: var(--primary-100);
+          color: var(--primary-000);
         }
 
         button {
@@ -105,7 +105,22 @@ const Wrapper = styled.div`
       }
 
       .response-message {
-        color: var(--primary-000);
+        color: var(--grey-100);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+
+        a {
+          color: var(--primary-100);
+          font-size: 0.95em;
+          text-decoration: none;
+        }
+
+        a:hover {
+          color: var(--primary-000);
+        }
       }
     }
   }
