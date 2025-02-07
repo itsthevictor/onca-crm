@@ -22,6 +22,7 @@ import ResetPassword, {
   resetPasswordAction,
   resetPasswordLoader,
 } from "./pages/ResetPassword";
+import Error from "./pages/Error";
 
 function App() {
   const router = createBrowserRouter([
@@ -29,6 +30,7 @@ function App() {
       path: "/",
       element: <Dashboard />,
       loader: dashboardLoader,
+      errorElement: <Error />,
       children: [
         {
           element: <Overview />,
