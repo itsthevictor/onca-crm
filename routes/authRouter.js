@@ -8,7 +8,9 @@ import {
   verifyEmail,
 } from "../controllers/authController.js";
 import {
+  validateForgotPasswordInput,
   validateLoginInput,
+  validateResetPasswordInput,
   validateUserInput,
 } from "../middleware/validationMiddleware.js";
 
@@ -25,7 +27,9 @@ router
 router.route("/verify-email").post(verifyEmail);
 router.route("/login").post(validateLoginInput, login);
 router.route("/logout").get(logout);
-router.route("/forgot-password").post(forgotPassword);
-router.route("/reset-password").post(resetPassword);
+router
+  .route("/forgot-password")
+  .post(validateForgotPasswordInput, forgotPassword);
+router.route("/reset-password").post(validateResetPasswordInput, resetPassword);
 
 export default router;

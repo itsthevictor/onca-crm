@@ -46,9 +46,9 @@ export const validateUserInput = withValidationErrors([
   body("lastName").notEmpty().withMessage("user last name is required"),
   body("email")
     .notEmpty()
-    .withMessage("email is required")
+    .withMessage("emailul este necesar")
     .isEmail()
-    .withMessage("invalid email format")
+    .withMessage("format invalid pentru email")
     .custom(async (email) => {
       const user = await User.findOne({ email });
       if (user) {
@@ -65,9 +65,9 @@ export const validateUserInput = withValidationErrors([
 export const validateLoginInput = withValidationErrors([
   body("email")
     .notEmpty()
-    .withMessage("email is required")
+    .withMessage("emailul este necesar")
     .isEmail()
-    .withMessage("invalid email format"),
+    .withMessage("format invalid pentru email"),
   body("password").notEmpty().withMessage("password is required"),
 ]);
 
@@ -84,3 +84,21 @@ export const validateCuiInput = async (req, res, next) => {
     throw new BadRequestError("cui-ul nu este valid");
   }
 };
+
+export const validateForgotPasswordInput = withValidationErrors([
+  body("email")
+    .notEmpty()
+    .withMessage("emailul este necesar")
+    .isEmail()
+    .withMessage("format invalid pentru email"),
+]);
+
+export const validateResetPasswordInput = withValidationErrors([
+  body("token").notEmpty().withMessage("vă rugăm încercați din nou"),
+  body("email")
+    .notEmpty()
+    .withMessage("emailul este necesar")
+    .isEmail()
+    .withMessage("format invalid pentru email"),
+  body("password").notEmpty().withMessage("vă rugăm introduceți o parolă nouă"),
+]);

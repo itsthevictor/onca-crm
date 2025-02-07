@@ -21,17 +21,19 @@ export const resetPasswordAction = async ({ request, params }) => {
   try {
     const response = await mainFetch.post("/auth/reset-password", data);
     toast.success(response?.data?.msg);
-    return response.data;
+    return response.data.msg;
   } catch (error) {
     toast.error(error?.response?.data?.msg);
     console.log(error);
-    return error;
+    const msg = error?.response?.data?.msg;
+    const status = error?.response?.status;
+    return { msg, status };
   }
 };
 
 const ResetPassword = () => {
   const actionData = useActionData();
-  console.log(actionData);
+  console.log("action data", actionData);
 
   return (
     <Wrapper>
@@ -55,7 +57,9 @@ const ResetPassword = () => {
           {actionData && (
             <div className="response-message">
               {actionData.msg}
-              <Link to="/autentificare">Mergi la autentificare</Link>
+              {actionData.status === 200 && (
+                <Link to="/autentificare">Mergi la autentificare</Link>
+              )}
             </div>
           )}
         </div>

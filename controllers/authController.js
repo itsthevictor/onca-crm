@@ -1,7 +1,10 @@
 import User from "../models/User.js";
 import StatusCodes from "http-status-codes";
-import { comparePassword } from "../utils/passwordUtils.js";
-import { UnauthenticatedError } from "../errors/customErrors.js";
+import { comparePassword, hashPassword } from "../utils/passwordUtils.js";
+import {
+  BadRequestError,
+  UnauthenticatedError,
+} from "../errors/customErrors.js";
 import { createJWT } from "../utils/tokenUtils.js";
 import crypto from "crypto";
 import { sendVerificationEmail } from "../utils/sendVerificationEmail.js";
@@ -92,6 +95,8 @@ export const forgotPassword = async (req, res) => {
 
 export const resetPassword = async (req, res) => {
   const { token, email, password } = req.body;
+  console.log(req.body);
+
   const user = await User.findOne({ email });
   if (user) {
     const currentDate = new Date();
@@ -99,11 +104,13 @@ export const resetPassword = async (req, res) => {
       user.passwordToken === hashString(token) &&
       user.passwordTokenExpirationDate > currentDate
     ) {
-      user.password = password;
+      user.password = await hashPassword(password);
       user.passwordToken = "";
       user.passwordTokenExpirationDate = "";
 
       await user.save();
+    } else {
+      throw new BadRequestError("încercați din nou");
     }
   }
 
