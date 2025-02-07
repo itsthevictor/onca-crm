@@ -64,3 +64,46 @@ export const logout = async (req, res) => {
   });
   res.status(StatusCodes.OK).json({ msg: "logged out" });
 };
+
+export const forgotPassword = async (req, res) => {
+  const { email } = req.body;
+  const user = await User.findOne({ email });
+  if (user) {
+    const passwordToken = crypto.randomBytes(70).toString("hex");
+    // send email
+    await sendResetPasswordEmail({
+      name: user.name,
+      email: user.email,
+      token: passwordToken,
+    });
+    const quarterH = 1000 * 60 * 15;
+    const passwordTokenExpirationDate = new Date(Date.now() + quarterH);
+    user.passwordToken = hashString(passwordToken);
+    user.passwordTokenExpirationDate = passwordTokenExpirationDate;
+    await user.save();
+  }
+
+  res
+    .status(StatusCodes.OK)
+    .json({ msg: "Please check your email for reset password link" });
+};
+
+export const resetPassword = async (req, res) => {
+  const { token, email, password } = req.body;
+  const user = await User.findOne({ email });
+  if (user) {
+    const currentDate = new Date();
+    if (
+      user.passwordToken === hashString(token) &&
+      user.passwordTokenExpirationDate > currentDate
+    ) {
+      user.password = password;
+      user.passwordToken = "";
+      user.passwordTokenExpirationDate = "";
+
+      await user.save();
+    }
+  }
+
+  res.status(StatusCodes.OK).json({ msg: "password has been reset" });
+};
