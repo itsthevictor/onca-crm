@@ -28,16 +28,21 @@ const ForgotPassword = () => {
       <div className="container">
         <Logo />
         <div className="form-container">
-          <div className="title">
-            <h2>Am uitat parola</h2>
-          </div>
-          <Form method="post">
-            <div className="form-row">
-              <label htmlFor="email">email</label>
-              <input type="email" id="email" name="email" />
+          {!data && (
+            <div className="title">
+              <h2>Am uitat parola</h2>
             </div>
-            <button type="submit">submit</button>
-          </Form>
+          )}
+          {!data && (
+            <Form method="post">
+              <div className="form-row">
+                <label htmlFor="email">email</label>
+                <input type="email" id="email" name="email" />
+              </div>
+              <button type="submit">submit</button>
+            </Form>
+          )}
+          {data && <div className="response-message">{data.msg}</div>}
         </div>
       </div>
     </Wrapper>

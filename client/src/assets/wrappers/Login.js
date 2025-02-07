@@ -103,6 +103,10 @@ const Wrapper = styled.div`
           }
         }
       }
+
+      .response-message {
+        color: var(--primary-000);
+      }
     }
   }
 `;
