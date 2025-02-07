@@ -5,6 +5,7 @@ import { UnauthenticatedError } from "../errors/customErrors.js";
 import { createJWT } from "../utils/tokenUtils.js";
 import crypto from "crypto";
 import { sendVerificationEmail } from "../utils/sendVerificationEmail.js";
+import { sendResetPasswordEmail } from "../utils/sendPasswordEmail.js";
 
 export const register = async (req, res) => {
   console.log(req.user);

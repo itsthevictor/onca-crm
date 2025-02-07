@@ -1,4 +1,4 @@
-import sendEmail from "./sendEmail.js";
+import sgMail from "@sendgrid/mail";
 
 export const sendResetPasswordEmail = async ({
   name,
