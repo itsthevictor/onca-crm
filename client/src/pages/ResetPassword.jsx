@@ -21,7 +21,7 @@ export const resetPasswordAction = async ({ request, params }) => {
   try {
     const response = await mainFetch.post("/auth/reset-password", data);
     toast.success(response?.data?.msg);
-    return response.data.msg;
+    return redirect("/autentificare");
   } catch (error) {
     toast.error(error?.response?.data?.msg);
     console.log(error);

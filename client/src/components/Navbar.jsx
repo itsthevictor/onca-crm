@@ -2,6 +2,7 @@ import Wrapper from "../assets/wrappers/Navbar";
 import Logo from "./Logo";
 import { useDashboardContext } from "../layouts/Dashboard";
 import { Avatar } from "../components";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const {
@@ -30,7 +31,9 @@ const Navbar = () => {
           </div>
         </div>
         <div className="status">
-          <Avatar />
+          <Link to="/profil">
+            <Avatar />
+          </Link>
         </div>
       </div>
     </Wrapper>

@@ -7,7 +7,12 @@ const Wrapper = styled.div`
     height: calc(100vh - var(--nav-height));
     width: fit-content;
     padding-top: 0.5rem;
+    padding-right: 0.2rem;
     color: var(--grey-100);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     .nav-links {
       display: flex;
       flex-direction: column;
@@ -24,7 +29,7 @@ const Wrapper = styled.div`
         display: flex;
         align-items: center;
         border-radius: var(--round-sm);
-        padding: 5px 15px 5px 10px;
+        padding: 5px 10px 5px 10px;
         color: var(--blue-50);
         text-decoration: none;
         transition: all 0.2s ease;
@@ -96,6 +101,32 @@ const Wrapper = styled.div`
             opacity: 1;
           }
         }
+      }
+    }
+
+    .logout-btn {
+      padding: 10px 20px;
+      border-radius: var(--round-sm);
+      text-transform: capitalize;
+      cursor: pointer;
+      margin-bottom: 2vh;
+      background: inherit;
+      border: none;
+      outline: none;
+      color: var(--blue-000);
+      opacity: 0.8;
+      transition: all 0.2s linear;
+      width: fit-content;
+      font-weight: 500;
+      .logout-icon {
+        margin-left: 2px;
+        margin-bottom: -3px;
+      }
+
+      &:hover {
+        background: var(--primary-100);
+        opacity: 1;
+        color: var(--blue-500);
       }
     }
   }

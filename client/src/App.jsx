@@ -23,6 +23,7 @@ import ResetPassword, {
   resetPasswordLoader,
 } from "./pages/ResetPassword";
 import Error from "./pages/Error";
+import Profile from "./pages/Profile";
 
 function App() {
   const router = createBrowserRouter([
@@ -74,6 +75,10 @@ function App() {
           element: <Companies />,
           action: companiesAction,
           loader: companiesLoader,
+        },
+        {
+          path: "profil",
+          element: <Profile />,
         },
       ],
     },

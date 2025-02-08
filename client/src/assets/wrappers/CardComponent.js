@@ -9,6 +9,7 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     gap: 10px;
+    box-shadow: 0px 0px 9px -3px rgba(0, 0, 0, 0.09);
 
     h4 {
       text-transform: capitalize;

@@ -4,20 +4,13 @@ import { useState } from "react";
 import Wrapper from "../assets/wrappers/Avatar";
 
 const Avatar = () => {
-  const { user, logOutUser, setShowLogout, showLogout } = useDashboardContext();
+  const { user } = useDashboardContext();
 
   const avatarURL = `https://avatar.iran.liara.run/username?username=${user.firstName}+${user.lastName}`;
 
   return (
     <Wrapper>
-      <button
-        type="button"
-        className="btn user-btn"
-        onClick={() => {
-          setShowLogout(!showLogout);
-        }}
-      >
-        {" "}
+      <button type="button" className="btn user-btn">
         <img
           src={avatarURL}
           alt="avatar"
