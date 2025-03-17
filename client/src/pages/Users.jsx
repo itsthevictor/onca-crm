@@ -1,13 +1,16 @@
-import { Link } from "react-router-dom";
-import Wrapper from "../assets/wrappers/AddUser";
-import { AddButton } from "../components";
+import { Link } from 'react-router-dom';
+import Wrapper from '../assets/wrappers/Users';
+import { AddButton } from '../components';
 const Users = () => {
   return (
     <Wrapper>
-      <div className="container">Users list</div>
-      <Link to="adauga-user">
-        <AddButton text="adaugă user" />
-      </Link>
+      <header>
+        {' '}
+        <div className='container'>Useri</div>
+        <Link to='adauga-user'>
+          <AddButton text=' + adaugă user' />
+        </Link>
+      </header>
     </Wrapper>
   );
 };

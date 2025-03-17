@@ -59,10 +59,13 @@ const Wrapper = styled.div`
           label {
             color: var(--grey-300);
             font-weight: 500;
+            font-size: 0.8rem;
             text-transform: capitalize;
           }
 
-          input {
+          input,
+          select,
+          option {
             width: 100%;
             margin-top: 5px;
             padding: 8px;
@@ -110,7 +113,7 @@ const Wrapper = styled.div`
             }
 
             input[type='radio']:checked + label {
-              background: var(--primary-200);
+              background: var(--primary-300);
               color: var(--primary-0);
               font-weight: 500;
             }
@@ -125,66 +128,6 @@ const Wrapper = styled.div`
 
         a:hover {
           color: var(--primary-100);
-        }
-
-        button {
-          float: right;
-          margin-top: 10px;
-          width: fit-content;
-          padding: 8px 18px;
-          border-radius: var(--round-sm);
-          border: none;
-          outline: none;
-          /* background: var(--primary-200); */
-          color: white;
-          font-size: 0.9rem;
-          font-weight: 500;
-          cursor: pointer;
-          transition: all 0.2 ease;
-          background: #0079ff;
-          background: -webkit-gradient(
-            linear,
-            0% 0%,
-            0% 100%,
-            from(#0096ff),
-            to(#005dff)
-          );
-          background: -webkit-linear-gradient(
-            0% 0%,
-            0% 100%,
-            from(#2790ff),
-            to(#017aff)
-          );
-          background: -moz-linear-gradient(center top, #2790ff, #017aff);
-          opacity: 0.9;
-
-          &:hover {
-            opacity: 1;
-            /* background: #0079ff;
-            background: -webkit-gradient(
-              linear,
-              0% 0%,
-              0% 100%,
-              from(#0096ff),
-              to(#005dff)
-            );
-            background: -webkit-linear-gradient(
-              0% 0%,
-              0% 100%,
-              from(#2790ff),
-              to(#017aff)
-            );
-            background: -moz-linear-gradient(
-              center top,
-              rgb(39, 143, 255),
-              rgb(11, 129, 254)
-            ); */
-          }
-          &:disabled {
-            background: var(--grey-200);
-            /* color: var(--blue-500); */
-            cursor: not-allowed;
-          }
         }
       }
     }

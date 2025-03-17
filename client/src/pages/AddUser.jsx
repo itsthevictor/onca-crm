@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Form, Link, redirect } from 'react-router-dom';
 import Wrapper from '../assets/wrappers/AddUser';
 import { mainFetch } from '../utils/customFetch';
 import { toast } from 'react-toastify';
+import { AddButton } from '../components';
 
 export const addUserAction = async ({ request }) => {
   const formData = await request.formData();
@@ -24,7 +25,14 @@ const AddUser = () => {
     email: '',
   });
   const [isValidEmail, setIsValidEmail] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(false);
   const { firstName, lastName, email } = userData;
+
+  useEffect(() => {
+    if (!firstName || !lastName || !email || !isValidEmail) {
+      setIsDisabled(false);
+    } else setIsDisabled(true);
+  }, [userData]);
 
   const validateEmail = (value) => {
     setIsValidEmail(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)); // Simple email regex
@@ -75,7 +83,7 @@ const AddUser = () => {
             <div className='form-row'>
               {' '}
               <label htmlFor='role'>rol</label>
-              <div className='role'>
+              {/* <div className='role'>
                 {' '}
                 <input
                   type='radio'
@@ -118,17 +126,20 @@ const AddUser = () => {
                 <label htmlFor='temp' className='radio-label'>
                   temp
                 </label>
+              </div> */}
+              <div className='role'>
+                <select id='rol'>
+                  <option value='empty'> </option>
+                  <option value='admin'>account</option>
+                  <option value='admin'>officer</option>
+                  <option value='admin'>admin</option>
+                  <option value='admin'>temporary</option>
+                </select>
               </div>
             </div>
             <div className='form-row'></div>
             <div className='btn-row'>
-              {' '}
-              <button
-                type='submit'
-                disabled={!firstName || !lastName || !email || !isValidEmail}
-              >
-                Adaugă
-              </button>
+              <AddButton text={'adaugă'} disabled={!isDisabled} />
             </div>
           </Form>
         </div>
