@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Wrapper = styled.div`
   .sidebar-container {
@@ -124,9 +124,9 @@ const Wrapper = styled.div`
       }
 
       &:hover {
-        background: var(--primary-100);
+        background: var(--blue-400);
         opacity: 1;
-        color: var(--blue-500);
+        color: var(--primary-100);
       }
     }
   }

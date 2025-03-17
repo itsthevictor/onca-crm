@@ -1,28 +1,28 @@
 /* IMPORTS */
-@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap");
-@import "react-toastify/dist/ReactToastify.min.css";
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap');
+@import 'react-toastify/dist/ReactToastify.min.css';
 .orbitron-style {
-  font-family: "Orbitron", sans-serif;
+  font-family: 'Orbitron', sans-serif;
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
 }
 
 .passion-one-regular {
-  font-family: "Passion One", sans-serif;
+  font-family: 'Passion One', sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
 .passion-one-bold {
-  font-family: "Passion One", sans-serif;
+  font-family: 'Passion One', sans-serif;
   font-weight: 500;
   font-style: normal;
 }
 
 .passion-one-black {
-  font-family: "Passion One", sans-serif;
+  font-family: 'Passion One', sans-serif;
   font-weight: 900;
   font-style: normal;
 }
@@ -32,12 +32,13 @@
   /* colors */
   --blue-000: #d5f4ff;
   --blue-50: #c7e2ff;
-  --blue-600: #1753eb;
+
   --blue-100: #0443e1;
   --blue-200: #1f274c;
   --blue-300: #1a2247;
   --blue-400: #21243a;
   --blue-500: #000934;
+  --blue-600: #2b3d69;
 
   /*primary */
   --primary-0: #ecfefb;
@@ -46,11 +47,16 @@
   --primary-200: #04a28e;
   --primary-300: #046f61;
   --primary-400: #027d60;
+  --primary-500: #01634c;
 
   /* greys */
+  --grey-25: #f5f5f5;
+  --grey-50: #ebecf0;
   --grey-100: #e1e3e9;
   --grey-200: #a1a5ae;
   --grey-300: #63666c;
+  --grey-400: #4c4f53;
+  --grey-500: #323437;
 
   /* reds & errors */
   --red-000: #ffe5e4;
@@ -77,8 +83,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   /* font-family: Arial, Helvetica, sans-serif; */
 }
 

@@ -4,14 +4,14 @@ import {
   useNavigate,
   useNavigation,
   redirect,
-} from "react-router-dom";
-import { Navbar, Menu, SelectCompany, UserModal } from "../components";
+} from 'react-router-dom';
+import { Navbar, Menu, SelectCompany, UserModal } from '../components';
 
-import Wrapper from "../assets/wrappers/Dashboard";
-import { mainFetch } from "../utils/customFetch";
-import { createContext, useContext, useState } from "react";
-import { toast } from "react-toastify";
-import axios from "axios";
+import Wrapper from '../assets/wrappers/Dashboard';
+import { mainFetch } from '../utils/customFetch';
+import { createContext, useContext, useState } from 'react';
+import { toast } from 'react-toastify';
+import axios from 'axios';
 const DashboardContext = createContext();
 
 export const dashboardLoader = async () => {
@@ -20,25 +20,25 @@ export const dashboardLoader = async () => {
     const { user } = data;
 
     if (!user) {
-      return redirect("/autentificare");
+      return redirect('/autentificare');
     }
     return user;
   } catch (error) {
-    return redirect("/autentificare");
+    return redirect('/autentificare');
   }
 };
 
 const Dashboard = () => {
-  const [activeCompany, setActiveCompany] = useState("InnoZ");
+  const [activeCompany, setActiveCompany] = useState('InnoZ');
   const [selectCompany, setSelectCompany] = useState(false);
-  const [showLogout, setShowLogout] = useState(false);
+
   const user = useLoaderData();
   const navigate = useNavigate();
 
   const logOutUser = async () => {
-    navigate("/autentificare");
-    await mainFetch.get("/auth/logout");
-    toast.success("logged out");
+    navigate('/autentificare');
+    await mainFetch.get('/auth/logout');
+    toast.success('logged out');
   };
 
   return (
@@ -50,8 +50,6 @@ const Dashboard = () => {
         setActiveCompany,
         selectCompany,
         setSelectCompany,
-        showLogout,
-        setShowLogout,
       }}
     >
       <Wrapper>
@@ -59,9 +57,9 @@ const Dashboard = () => {
           <Navbar />
           <SelectCompany />
           <UserModal />
-          <section className="dashboard-container">
+          <section className='dashboard-container'>
             <Menu />
-            <div className="dashboard-page">
+            <div className='dashboard-page'>
               <Outlet />
             </div>
           </section>

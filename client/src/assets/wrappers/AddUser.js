@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Wrapper = styled.div`
   .wrapper {
@@ -65,11 +65,12 @@ const Wrapper = styled.div`
           input {
             width: 100%;
             margin-top: 5px;
-            padding: 10px;
+            padding: 8px;
             border-radius: var(--round-sm);
             border: 1px solid var(--grey-100);
             outline: none;
-            background: var(--grey-100);
+            background: var(--grey-25);
+            font-size: 0.9rem;
           }
           .role {
             margin-top: 5px;
@@ -77,19 +78,19 @@ const Wrapper = styled.div`
             display: flex;
             justify-content: space-between;
 
-            input[type="radio"] {
+            input[type='radio'] {
               display: none;
             }
 
             .radio-label {
               width: 100%;
               padding: 10px;
-              font-size: 0.9em;
+              font-size: 0.8em;
               /* border-top: 1px solid var(--grey-100);
               border-bottom: 1px solid var(--grey-100); */
               text-align: center;
               cursor: pointer;
-              background: var(--grey-100);
+              background: var(--grey-25);
               color: var(--grey-300);
               transition: all 0.25s ease;
             }
@@ -108,9 +109,9 @@ const Wrapper = styled.div`
               /* border-right: 1px solid var(--grey-100); */
             }
 
-            input[type="radio"]:checked + label {
-              background: var(--blue-200);
-              color: var(--primary-000);
+            input[type='radio']:checked + label {
+              background: var(--primary-200);
+              color: var(--primary-0);
               font-weight: 500;
             }
           }
@@ -127,21 +128,57 @@ const Wrapper = styled.div`
         }
 
         button {
+          float: right;
           margin-top: 10px;
-          width: 100%;
-          padding: 10px;
+          width: fit-content;
+          padding: 8px 18px;
           border-radius: var(--round-sm);
           border: none;
           outline: none;
-          background: var(--primary-200);
+          /* background: var(--primary-200); */
           color: white;
-          font-size: 1.1em;
+          font-size: 0.9rem;
           font-weight: 500;
           cursor: pointer;
+          transition: all 0.2 ease;
+          background: #0079ff;
+          background: -webkit-gradient(
+            linear,
+            0% 0%,
+            0% 100%,
+            from(#0096ff),
+            to(#005dff)
+          );
+          background: -webkit-linear-gradient(
+            0% 0%,
+            0% 100%,
+            from(#2790ff),
+            to(#017aff)
+          );
+          background: -moz-linear-gradient(center top, #2790ff, #017aff);
+          opacity: 0.9;
 
           &:hover {
-            background: var(--primary-100);
-            /* color: var(--blue-500); */
+            opacity: 1;
+            /* background: #0079ff;
+            background: -webkit-gradient(
+              linear,
+              0% 0%,
+              0% 100%,
+              from(#0096ff),
+              to(#005dff)
+            );
+            background: -webkit-linear-gradient(
+              0% 0%,
+              0% 100%,
+              from(#2790ff),
+              to(#017aff)
+            );
+            background: -moz-linear-gradient(
+              center top,
+              rgb(39, 143, 255),
+              rgb(11, 129, 254)
+            ); */
           }
           &:disabled {
             background: var(--grey-200);
