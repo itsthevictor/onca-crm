@@ -5,7 +5,7 @@ import {
   useNavigation,
   redirect,
 } from 'react-router-dom';
-import { Navbar, Menu, SelectCompany, UserModal } from '../components';
+import { Navbar, Menu, SelectCompany, UserModal, Loading } from '../components';
 
 import Wrapper from '../assets/wrappers/Dashboard';
 import { mainFetch } from '../utils/customFetch';
@@ -35,6 +35,9 @@ const Dashboard = () => {
   const user = useLoaderData();
   const navigate = useNavigate();
 
+  const navigation = useNavigation();
+  const isPageLoading = navigation.state === 'loading';
+
   const logOutUser = async () => {
     navigate('/autentificare');
     await mainFetch.get('/auth/logout');
@@ -60,7 +63,7 @@ const Dashboard = () => {
           <section className='dashboard-container'>
             <Menu />
             <div className='dashboard-page'>
-              <Outlet />
+              {isPageLoading ? <Loading /> : <Outlet />}
             </div>
           </section>
         </main>

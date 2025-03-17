@@ -191,3 +191,22 @@ select {
     cursor: not-allowed;
   }
 }
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  width: 3rem;
+  height: 3rem;
+  border: 5px solid var(--grey-100);
+  border-radius: 50%;
+  border-top-color: var(--grey-200);
+  animation: spinner 1s linear infinite;
+}
