@@ -128,6 +128,10 @@ const Wrapper = styled.div`
         a:hover {
           color: var(--primary-100);
         }
+        .btn-row {
+          display: flex;
+          justify-content: flex-end;
+        }
       }
     }
   }

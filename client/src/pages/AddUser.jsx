@@ -23,6 +23,7 @@ const AddUser = () => {
     firstName: '',
     lastName: '',
     email: '',
+    role: '',
   });
   const [isValidEmail, setIsValidEmail] = useState(false);
   const [isDisabled, setIsDisabled] = useState(false);
@@ -89,50 +90,6 @@ const AddUser = () => {
             <div className='form-row'>
               {' '}
               <label htmlFor='role'>rol</label>
-              {/* <div className='role'>
-                {' '}
-                <input
-                  type='radio'
-                  name='role'
-                  id='admin'
-                  value='admin'
-                  className='radio-input'
-                />
-                <label htmlFor='admin' className='radio-label'>
-                  admin
-                </label>
-                <input
-                  type='radio'
-                  name='role'
-                  id='officer'
-                  value='officer'
-                  className='radio-input'
-                  defaultChecked
-                />
-                <label htmlFor='officer' className='radio-label'>
-                  officer
-                </label>
-                <input
-                  type='radio'
-                  name='role'
-                  id='account'
-                  className='radio-input'
-                  value='account'
-                />
-                <label htmlFor='account' className='radio-label'>
-                  account
-                </label>
-                <input
-                  type='radio'
-                  name='role'
-                  id='temp'
-                  className='radio-input'
-                  value='temporar'
-                />
-                <label htmlFor='temp' className='radio-label'>
-                  temp
-                </label>
-              </div> */}
               <div className='role'>
                 <select
                   id='rol'

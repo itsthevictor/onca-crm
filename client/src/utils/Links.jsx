@@ -30,7 +30,18 @@ const links = [
       },
     ],
   },
-  { text: 'useri', path: 'useri', icon: <HiMiniUserGroup size={18} /> },
+  {
+    text: 'useri',
+    path: 'useri',
+    icon: <HiMiniUserGroup size={18} />,
+    children: [
+      {
+        text: 'adaugă user',
+        path: '/useri/adauga-user',
+        // icon: <MdOutlineArrowRight size={17} />,
+      },
+    ],
+  },
 ];
 
 export default links;
