@@ -1,9 +1,6 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
   button {
     float: right;
     margin-top: 10px;
@@ -12,7 +9,7 @@ const Wrapper = styled.div`
     border-radius: var(--round-sm);
     border: none;
     outline: none;
-    text-transform: capitalize;
+    /* background: var(--primary-200); */
     color: white;
     font-size: 0.8rem;
     font-weight: 500;

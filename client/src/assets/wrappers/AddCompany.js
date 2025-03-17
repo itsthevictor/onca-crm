@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Wrapper = styled.div`
   padding-right: 1rem;
@@ -8,8 +8,10 @@ const Wrapper = styled.div`
     justify-content: space-between;
     align-items: center;
   }
-  a {
+  .navigation {
     text-decoration: none;
+    color: var(--blue-100);
+    font-size: 0.9rem;
   }
   .add-company {
     form {
@@ -30,6 +32,7 @@ const Wrapper = styled.div`
         label {
           color: var(--grey-300);
           font-weight: 500;
+          font-size: 0.8rem;
           text-transform: capitalize;
         }
 
@@ -40,14 +43,13 @@ const Wrapper = styled.div`
           border-radius: var(--round-sm);
           border: 1px solid var(--grey-100);
           outline: none;
-          background: var(--grey-100);
+          background: var(--grey-25);
         }
       }
-      .submit-btn {
-        padding: 7px 0;
-        position: absolute;
-        bottom: 2.3rem;
-        right: 2rem;
+      .btn-row {
+        display: flex;
+        align-items: bottom;
+        justify-content: flex-end;
       }
     }
   }
