@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   button {
     float: right;
     margin-top: 10px;

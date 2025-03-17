@@ -19,9 +19,7 @@ const Users = () => {
       <header>
         {' '}
         <div className='container'>Useri</div>
-        <Link to='adauga-user'>
-          <AddButton text=' + adaugă user' />
-        </Link>
+        <Link to='adauga-user'>{' + adaugă user'}</Link>
       </header>
       <div className='user-list'>
         {users.map((item, i) => (
