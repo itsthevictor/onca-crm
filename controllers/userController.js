@@ -1,6 +1,7 @@
-import { StatusCodes } from "http-status-codes";
-import User from "../models/User.js";
-import { hashPassword } from "../utils/passwordUtils.js";
+import { StatusCodes } from 'http-status-codes';
+import User from '../models/User.js';
+import { hashPassword } from '../utils/passwordUtils.js';
+import { UnauthorizedError } from '../errors/customErrors.js';
 
 export const getCurrentUser = async (req, res) => {
   const userWP = await User.findOne({ _id: req.user.userId });
@@ -8,8 +9,16 @@ export const getCurrentUser = async (req, res) => {
   res.status(StatusCodes.OK).json({ user });
 };
 
+export const getAllUsers = async (req, res) => {
+  let users = await User.find(
+    { _id: { $ne: req.user.userId } },
+    { password: 0 }
+  );
+  res.status(StatusCodes.OK).json({ users });
+};
+
 export const getApplicationStats = async (req, res) => {
-  res.status(StatusCodes.OK).json({ msg: "application stats" });
+  res.status(StatusCodes.OK).json({ msg: 'application stats' });
 };
 
 export const activateAccount = async (req, res) => {
@@ -18,7 +27,7 @@ export const activateAccount = async (req, res) => {
   const filter = { email: req.body.email };
   const update = { password: req.body.password };
   const updatedUser = await User.findOneAndUpdate(filter, update);
-  res.status(StatusCodes.OK).json({ msg: "user activat" });
+  res.status(StatusCodes.OK).json({ msg: 'user activat' });
 };
 
 export const updateUser = async (req, res) => {

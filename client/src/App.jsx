@@ -1,34 +1,34 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import Dashboard, { dashboardLoader } from "./layouts/Dashboard";
-import Partners from "./pages/Partners";
-import Users from "./pages/Users";
-import Login, { loginAction } from "./pages/Login";
-import Register from "./pages/Register";
-import AddUser, { addUserAction } from "./pages/AddUser";
+import Dashboard, { dashboardLoader } from './layouts/Dashboard';
+import Partners from './pages/Partners';
+import Users, { usersLoader } from './pages/Users';
+import Login, { loginAction } from './pages/Login';
+import Register from './pages/Register';
+import AddUser, { addUserAction } from './pages/AddUser';
 import VerifyEmail, {
   verifyEmailAction,
   verifyEmailLoader,
-} from "./pages/VerifyEmail";
-import Leads from "./pages/Leads";
-import Clients from "./pages/Clients";
-import Programmes from "./pages/Programmes";
-import Reports from "./pages/Reports";
-import Overview from "./pages/Overview";
-import Admin from "./pages/Admin";
-import Companies, { companiesAction, companiesLoader } from "./pages/Companies";
-import ForgotPassword, { forgotPasswordAction } from "./pages/ForgotPassword";
+} from './pages/VerifyEmail';
+import Leads from './pages/Leads';
+import Clients from './pages/Clients';
+import Programmes from './pages/Programmes';
+import Reports from './pages/Reports';
+import Overview from './pages/Overview';
+import Admin from './pages/Admin';
+import Companies, { companiesAction, companiesLoader } from './pages/Companies';
+import ForgotPassword, { forgotPasswordAction } from './pages/ForgotPassword';
 import ResetPassword, {
   resetPasswordAction,
   resetPasswordLoader,
-} from "./pages/ResetPassword";
-import Error from "./pages/Error";
-import Profile from "./pages/Profile";
+} from './pages/ResetPassword';
+import Error from './pages/Error';
+import Profile from './pages/Profile';
 
 function App() {
   const router = createBrowserRouter([
     {
-      path: "/",
+      path: '/',
       element: <Dashboard />,
       loader: dashboardLoader,
       errorElement: <Error />,
@@ -38,72 +38,73 @@ function App() {
           index: true,
         },
         {
-          path: "partners",
+          path: 'partners',
           element: <Partners />,
         },
         {
-          path: "useri",
+          path: 'useri',
           element: <Users />,
+          loader: usersLoader,
         },
         {
-          path: "/useri/adauga-user",
+          path: '/useri/adauga-user',
           element: <AddUser />,
           action: addUserAction,
         },
         {
-          path: "leads",
+          path: 'leads',
           element: <Leads />,
         },
         {
-          path: "clienti",
+          path: 'clienti',
           element: <Clients />,
         },
         {
-          path: "masuri",
+          path: 'masuri',
           element: <Programmes />,
         },
         {
-          path: "rapoarte",
+          path: 'rapoarte',
           element: <Reports />,
         },
         {
-          path: "admin",
+          path: 'admin',
           element: <Admin />,
         },
         {
-          path: "/admin/companii",
+          path: '/admin/companii',
           element: <Companies />,
           action: companiesAction,
           loader: companiesLoader,
         },
         {
-          path: "profil",
+          path: 'profil',
           element: <Profile />,
         },
       ],
     },
     {
-      path: "autentificare",
+      path: 'autentificare',
       element: <Login />,
       action: loginAction,
     },
     {
-      path: "inregistrare",
+      path: 'inregistrare',
       element: <Register />,
     },
     {
-      path: "am-uitat-parola",
+      path: 'am-uitat-parola',
       element: <ForgotPassword />,
       action: forgotPasswordAction,
     },
     {
-      path: "resetare-parola/:token?/:email?",
+      path: 'resetare-parola/:token?/:email?',
       element: <ResetPassword />,
       loader: resetPasswordLoader,
       action: resetPasswordAction,
     },
     {
-      path: "verify-email/:token?/:email?",
+      path: 'verify-email/:token?/:email?',
       element: <VerifyEmail />,
       loader: verifyEmailLoader,
       action: verifyEmailAction,

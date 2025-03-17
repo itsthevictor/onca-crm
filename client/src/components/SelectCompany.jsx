@@ -1,31 +1,31 @@
-import { useDashboardContext } from "../layouts/Dashboard";
-import Wrapper from "../assets/wrappers/SelectCompany";
+import { useDashboardContext } from '../layouts/Dashboard';
+import Wrapper from '../assets/wrappers/SelectCompany';
 
 const companies = [
   {
-    _id: "673e1d63fc13ae5ae2eecfed",
+    _id: '673e1d63fc13ae5ae2eecfed',
 
-    denumire: "InnoZ",
+    denumire: 'InnoZ',
   },
   {
-    _id: "673e1d63fc13ae5ae2eecfee",
+    _id: '673e1d63fc13ae5ae2eecfee',
 
-    denumire: "Shufflebeat",
+    denumire: 'Shufflebeat',
   },
   {
-    _id: "673e1d63fc13ae5ae2eecfef",
+    _id: '673e1d63fc13ae5ae2eecfef',
 
-    denumire: "Kare",
+    denumire: 'Kare',
   },
   {
-    _id: "673e1d63fc13ae5ae2eecff0",
+    _id: '673e1d63fc13ae5ae2eecff0',
 
-    denumire: "Blogspan",
+    denumire: 'Blogspan',
   },
   {
-    _id: "673e1d63fc13ae5ae2eecff1",
+    _id: '673e1d63fc13ae5ae2eecff1',
 
-    denumire: "Cogibox",
+    denumire: 'Cogibox',
   },
 ];
 
@@ -41,13 +41,14 @@ const SelectCompany = () => {
   return (
     <Wrapper>
       <div
-        className={selectCompany ? "select-container show" : "select-container"}
+        className={selectCompany ? 'select-container show' : 'select-container'}
         onClick={() => setSelectCompany(false)}
       >
-        <div class="options">
-          {companies.map((item) => (
+        <div className='options'>
+          {companies.map((item, i) => (
             <button
-              className="option"
+              key={i}
+              className='option'
               value={item.denumire}
               onClick={(e) => {
                 setActiveCompany(e.target.value);

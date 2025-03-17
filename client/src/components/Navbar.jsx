@@ -1,8 +1,8 @@
-import Wrapper from "../assets/wrappers/Navbar";
-import Logo from "./Logo";
-import { useDashboardContext } from "../layouts/Dashboard";
-import { Avatar } from "../components";
-import { Link } from "react-router-dom";
+import Wrapper from '../assets/wrappers/Navbar';
+import Logo from './Logo';
+import { useDashboardContext } from '../layouts/Dashboard';
+import { Avatar } from '../components';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const {
@@ -18,20 +18,20 @@ const Navbar = () => {
 
   return (
     <Wrapper>
-      <div className="nav-container">
-        <div className="logo">
+      <div className='nav-container'>
+        <div className='logo'>
           <Logo />
         </div>
-        <div className="search">
+        <div className='search'>
           <div
-            className="search-box"
+            className='search-box'
             onClick={() => setSelectCompany(!selectCompany)}
           >
-            <div class="active-company">{activeCompany}</div>
+            <div className='active-company'>{activeCompany}</div>
           </div>
         </div>
-        <div className="status">
-          <Link to="/profil">
+        <div className='status'>
+          <Link to='/profil'>
             <Avatar />
           </Link>
         </div>
