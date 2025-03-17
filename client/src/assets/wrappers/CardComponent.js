@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Wrapper = styled.div`
   .card-container {
@@ -17,9 +17,10 @@ const Wrapper = styled.div`
     }
     .content {
       span {
-        font-family: "Roboto";
+        font-family: 'Roboto';
         font-size: 2rem;
         font-weight: 600;
+        color: var(--grey-900);
       }
     }
   }
