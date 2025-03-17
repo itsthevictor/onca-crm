@@ -4,11 +4,11 @@ import Wrapper from '../assets/wrappers/AddUser';
 import { mainFetch } from '../utils/customFetch';
 import { toast } from 'react-toastify';
 import { AddButton } from '../components';
+import { USER_ROLES } from '../../../utils/constants';
 
 export const addUserAction = async ({ request }) => {
   const formData = await request.formData();
   const data = Object.fromEntries(formData);
-  console.log(data);
 
   try {
     await mainFetch.post('/auth/register', data);
@@ -29,7 +29,13 @@ const AddUser = () => {
   const { firstName, lastName, email } = userData;
 
   useEffect(() => {
-    if (!firstName || !lastName || !email || !isValidEmail) {
+    if (
+      !firstName ||
+      !lastName ||
+      !email ||
+      !isValidEmail ||
+      userData.role === ''
+    ) {
       setIsDisabled(false);
     } else setIsDisabled(true);
   }, [userData]);
@@ -128,12 +134,17 @@ const AddUser = () => {
                 </label>
               </div> */}
               <div className='role'>
-                <select id='rol'>
-                  <option value='empty'> </option>
-                  <option value='admin'>account</option>
-                  <option value='admin'>officer</option>
-                  <option value='admin'>admin</option>
-                  <option value='admin'>temporary</option>
+                <select
+                  id='rol'
+                  onChange={(e) =>
+                    setUserData({ ...userData, role: e.target.value })
+                  }
+                >
+                  <option value=''>alege rolul</option>
+                  <option value='admin'>{USER_ROLES.ACCOUNT}</option>
+                  <option value='admin'>{USER_ROLES.OFFICER}</option>{' '}
+                  <option value='admin'>{USER_ROLES.ADMIN}</option>{' '}
+                  <option value='admin'>{USER_ROLES.TEMP}</option>
                 </select>
               </div>
             </div>

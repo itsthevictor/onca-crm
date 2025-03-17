@@ -76,7 +76,6 @@ const Wrapper = styled.div`
             font-size: 0.9rem;
           }
           .role {
-            margin-top: 5px;
             width: 100%;
             display: flex;
             justify-content: space-between;
