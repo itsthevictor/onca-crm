@@ -11,46 +11,25 @@ const Wrapper = styled.div`
     .page-title {
       margin-bottom: 20px;
     }
-    /* .logo-container {
-      width: 300px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-  
-      gap: 10px;
-      margin-bottom: 20px;
-      img {
-        width: 50px;
-      }
-      .logo-text {
-        font-size: 2em;
-        font-style: italic;
-        letter-spacing: 0.04em;
-      }
-    } */
+
     .form-container {
-      /* width: 400px; */
       padding: 25px;
-      /* background: var(--blue-200); */
+
       border-radius: var(--round-sm);
       border: 1px solid var(--grey-100);
       box-shadow: 0px 0px 9px -3px rgba(0, 0, 0, 0.09);
       .title h2 {
         text-align: center;
-        /* color: var(--primary-100); */
+
         margin-bottom: 10px;
         text-transform: capitalize;
       }
       form {
         width: 100%;
-        /* display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center; */
+
         display: grid;
         grid-template-columns: 300px 300px;
         grid-gap: 5px 20px;
-        /* gap: 10px; */
 
         .form-row {
           width: 100%;
@@ -68,7 +47,7 @@ const Wrapper = styled.div`
           option {
             width: 100%;
             margin-top: 5px;
-            padding: 8px;
+            padding: 5px 8px;
             border-radius: var(--round-sm);
             border: 1px solid var(--grey-100);
             outline: none;
@@ -79,43 +58,6 @@ const Wrapper = styled.div`
             width: 100%;
             display: flex;
             justify-content: space-between;
-
-            input[type='radio'] {
-              display: none;
-            }
-
-            .radio-label {
-              width: 100%;
-              padding: 10px;
-              font-size: 0.8em;
-              /* border-top: 1px solid var(--grey-100);
-              border-bottom: 1px solid var(--grey-100); */
-              text-align: center;
-              cursor: pointer;
-              background: var(--grey-25);
-              color: var(--grey-300);
-              transition: all 0.25s ease;
-            }
-
-            .radio-label:not(last-of-type) {
-              /* border-right: 1px solid var(--grey-100); */
-            }
-
-            .radio-label:first-of-type {
-              border-radius: 5px 0 0 5px;
-              /* border-left: 1px solid var(--grey-100); */
-            }
-
-            .radio-label:last-of-type {
-              border-radius: 0 5px 5px 0;
-              /* border-right: 1px solid var(--grey-100); */
-            }
-
-            input[type='radio']:checked + label {
-              background: var(--primary-300);
-              color: var(--primary-0);
-              font-weight: 500;
-            }
           }
         }
 
@@ -131,6 +73,47 @@ const Wrapper = styled.div`
         .btn-row {
           display: flex;
           justify-content: flex-end;
+        }
+
+        .row {
+          .image {
+            position: relative;
+            width: fit-content;
+            max-width: 150px;
+            display: flex;
+            justify-content: flex-end;
+            border-radius: 100%;
+
+            img {
+              width: auto;
+              max-height: 150px;
+            }
+
+            .upload-label {
+              position: absolute;
+              top: 0;
+              right: 0;
+
+              button {
+                cursor: pointer;
+                opacity: 0.6;
+                background: lightgrey;
+                padding: 1rem;
+                border: none;
+                outline: none;
+                transition: all 0.2s ease;
+
+                &:hover {
+                  opacity: 0.8;
+                }
+              }
+
+              input[type='file'] {
+                padding-bottom: 3rem;
+                z-index: 99;
+              }
+            }
+          }
         }
       }
     }

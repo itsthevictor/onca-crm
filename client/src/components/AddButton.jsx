@@ -1,10 +1,10 @@
 import Wrapper from '../assets/wrappers/AddBtn';
 
-const AddButton = ({ text, onClick, disabled }) => {
+const AddButton = ({ text, onClick, disabled, type }) => {
   return (
     <Wrapper>
       <button
-        type='button'
+        type={type}
         onClick={onClick}
         className='add-btn'
         disabled={disabled}

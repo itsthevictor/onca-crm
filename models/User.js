@@ -1,5 +1,5 @@
-import mongoose from "mongoose";
-import { USER_ROLES } from "../utils/constants.js";
+import mongoose from 'mongoose';
+import { USER_ROLES } from '../utils/constants.js';
 
 const UserSchema = new mongoose.Schema({
   firstName: {
@@ -35,6 +35,8 @@ const UserSchema = new mongoose.Schema({
   passwordTokenExpirationDate: {
     type: Date,
   },
+  avatar: String,
+  avatarPublicId: String,
 });
 
 // Return user object without password in any request
@@ -44,4 +46,4 @@ UserSchema.methods.toJSON = function () {
   return obj;
 };
 
-export default mongoose.model("User", UserSchema);
+export default mongoose.model('User', UserSchema);

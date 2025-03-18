@@ -12,3 +12,4 @@ export { default as Avatar } from './Avatar';
 export { default as SelectCompany } from './SelectCompany';
 export { default as UserModal } from './UserModal';
 export { default as Loading } from './Loading';
+export { default as FormRow } from './FormRow';

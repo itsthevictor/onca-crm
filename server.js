@@ -8,6 +8,7 @@ import cookieParser from 'cookie-parser';
 import { dirname } from 'path';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import cloudinary from 'cloudinary';
 
 // init dotenv & setup app
 dotenv.config();
@@ -31,6 +32,14 @@ import companyRouter from './routes/companyRouter.js';
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
+
+// Cloudinary Configuration
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
+
 app.use(cookieParser());
 app.use(express.json());
 app.use('/api/v1/auth', authRouter);

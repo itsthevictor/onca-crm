@@ -76,6 +76,15 @@
   --round-md: 10px;
   --round-lg: 25px;
 
+  /* box shadow*/
+  --shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
   --toastify-color-success: var(--primary-300);
   --toastify-color-progress-bgo: var(--primary-300);
 }
@@ -209,4 +218,8 @@ select {
   border-radius: 50%;
   border-top-color: var(--grey-200);
   animation: spinner 1s linear infinite;
+}
+
+.hidden {
+  display: none;
 }
