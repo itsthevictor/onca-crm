@@ -81,17 +81,19 @@ const Wrapper = styled.div`
         }
 
         .row {
+          display: flex;
+          margin-bottom: 10px;
           .image {
             position: relative;
             width: fit-content;
-            max-width: 150px;
+            max-width: 125px;
             display: flex;
             justify-content: flex-end;
             border-radius: 100%;
 
             img {
               width: auto;
-              max-height: 150px;
+              max-height: 125px;
             }
 
             .upload-label {
@@ -102,7 +104,7 @@ const Wrapper = styled.div`
               button {
                 cursor: pointer;
                 opacity: 0.6;
-                background: lightgrey;
+
                 padding: 1rem;
                 border: none;
                 outline: none;
