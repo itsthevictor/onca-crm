@@ -83,6 +83,25 @@ const Wrapper = styled.div`
         .row {
           display: flex;
           margin-bottom: 10px;
+
+          .upload-btn {
+            background: inherit;
+            cursor: pointer;
+            opacity: 0.6;
+            border: none;
+            outline: none;
+            transition: all 0.2s ease;
+            border-radius: var(--round-md);
+
+            .icon {
+              cursor: pointer;
+              color: var(--grey-400);
+            }
+
+            &:hover {
+              opacity: 0.8;
+            }
+          }
           .image {
             position: relative;
             width: fit-content;
@@ -100,20 +119,6 @@ const Wrapper = styled.div`
               position: absolute;
               top: 0;
               right: 0;
-
-              button {
-                cursor: pointer;
-                opacity: 0.6;
-
-                padding: 1rem;
-                border: none;
-                outline: none;
-                transition: all 0.2s ease;
-
-                &:hover {
-                  opacity: 0.8;
-                }
-              }
 
               input[type='file'] {
                 padding-bottom: 3rem;

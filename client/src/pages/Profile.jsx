@@ -11,7 +11,6 @@ const Profile = () => {
   const avatarURL = `https://avatar.iran.liara.run/username?username=${user.firstName}+${user.lastName}`;
 
   const { firstName, lastName, email, role, avatar } = user;
-  console.log('avatar', avatar);
 
   const [userData, setUserData] = useState({
     firstName: firstName,
@@ -44,7 +43,6 @@ const Profile = () => {
       const reader = new FileReader();
       reader.onload = () => setImageSrc(reader.result);
       reader.readAsDataURL(file);
-      console.log(imageSrc);
     }
   };
 
@@ -52,7 +50,6 @@ const Profile = () => {
     e.preventDefault();
     var data = new FormData(e.currentTarget);
     let formObject = Object.fromEntries(data);
-    console.log(formObject);
 
     const file = formObject.avatar;
     if (file && file.size > 500000) {
@@ -88,7 +85,7 @@ const Profile = () => {
                 alt='Uploaded'
               />
               <label htmlFor='fileInput' className='upload-label'>
-                <GoPencil size={20} color='#4b5563' />
+                <GoPencil size={20} className='icon' />
               </label>
               <input
                 className='hidden'
