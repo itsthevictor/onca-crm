@@ -53,6 +53,11 @@ const Wrapper = styled.div`
             outline: none;
             background: var(--grey-25);
             font-size: 0.9rem;
+
+            &:disabled {
+              border: 1px solid var(--grey-25);
+              color: var(--grey-200);
+            }
           }
           .role {
             width: 100%;

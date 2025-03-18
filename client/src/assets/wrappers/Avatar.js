@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Wrapper = styled.div`
   button {
@@ -11,6 +11,7 @@ const Wrapper = styled.div`
 
     position: relative;
     .avatar {
+      border-radius: 100%;
       width: 33px;
       height: 33px;
     }

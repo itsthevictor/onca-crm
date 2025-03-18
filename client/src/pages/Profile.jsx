@@ -10,7 +10,8 @@ const Profile = () => {
   const { user } = useDashboardContext();
   const avatarURL = `https://avatar.iran.liara.run/username?username=${user.firstName}+${user.lastName}`;
 
-  const { firstName, lastName, email, role } = user;
+  const { firstName, lastName, email, role, avatar } = user;
+  console.log('avatar', avatar);
 
   const [userData, setUserData] = useState({
     firstName: firstName,
@@ -27,7 +28,13 @@ const Profile = () => {
   const [tempAvatar, setTempAvatar] = useState(
     user.avatar ? user.avatar : avatarURL
   );
-
+  useEffect(() => {
+    if (user.avatar) {
+      setTempAvatar(user.avatar);
+    } else {
+      setTempAvatar(avatarURL);
+    }
+  }, []);
   const handleImageChange = (e) => {
     setFile(true);
     setIsDisabled(false);
@@ -70,7 +77,7 @@ const Profile = () => {
     <Wrapper>
       <div className='wrapper'>
         <div className='page-title'>
-          <h2>Profil</h2>
+          <h2>Profilul meu</h2>
         </div>
         <div className='form-container'>
           <form method='post' onSubmit={handleSubmit}>
@@ -101,9 +108,7 @@ const Profile = () => {
                 id='firstName'
                 name='firstName'
                 defaultValue={firstName}
-                onChange={(e) =>
-                  setUserData({ ...userData, firstName: e.target.value })
-                }
+                onChange={() => setIsDisabled(false)}
               />
             </div>
             <div className='form-row'>
@@ -114,9 +119,7 @@ const Profile = () => {
                 id='lastName'
                 name='lastName'
                 defaultValue={lastName}
-                onChange={(e) =>
-                  setUserData({ ...userData, lastName: e.target.value })
-                }
+                onChange={() => setIsDisabled(false)}
               />
             </div>
             <div className='form-row'>
@@ -142,7 +145,13 @@ const Profile = () => {
                 disabled
               />
             </div>
-            <div className='form-row'></div>
+            <div className='form-row'>
+              <input
+                type='hidden'
+                name='avatarPublicId'
+                value={user.avatarPublicId}
+              />
+            </div>
 
             <div className='btn-row'>
               <AddButton

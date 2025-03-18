@@ -33,13 +33,16 @@ export const activateAccount = async (req, res) => {
 };
 
 export const updateUser = async (req, res) => {
-  const { firstName, lastName } = req.body;
-  let newUser = { firstName, lastName };
+  let newUser = { ...req.body };
 
   if (req.file) {
     const file = formatImage(req.file);
-    const response = await cloudinary.v2.uploader.upload(file);
-
+    const response = await cloudinary.v2.uploader.upload(file, {
+      folder: `users`,
+      resource_type: 'auto',
+      fetch_format: 'webp',
+      quality: 'auto:best',
+    });
     newUser.avatar = response.secure_url;
     newUser.avatarPublicId = response.public_id;
   }
@@ -49,7 +52,7 @@ export const updateUser = async (req, res) => {
   });
 
   if (req.file && updatedUser.avatarPublicId) {
-    await cloudinary.v2.uploader.destroy(updatedUser.avatarPublicId);
+    await cloudinary.v2.uploader.destroy(req.body.avatarPublicId);
   }
 
   res.status(StatusCodes.OK).json({ updatedUser });
