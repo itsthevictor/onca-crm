@@ -44,7 +44,7 @@ const FilteringTable = ({ tableData, COLUMNS }) => {
               {headerGroup.headers.map((column) => (
                 <th {...column.getHeaderProps()}>
                   {column.render('Header')}
-                  <div>{column.canFilter ? column.render('Filter') : null}</div>
+                  {/* <div>{column.canFilter ? column.render('Filter') : null}</div> */}
                 </th>
               ))}
             </tr>
@@ -64,7 +64,7 @@ const FilteringTable = ({ tableData, COLUMNS }) => {
             );
           })}
         </tbody>
-        <tfoot>
+        {/* <tfoot>
           {footerGroups.map((footerGroup) => (
             <tr {...footerGroup.getFooterGroupProps()}>
               {footerGroup.headers.map((column) => (
@@ -72,7 +72,7 @@ const FilteringTable = ({ tableData, COLUMNS }) => {
               ))}
             </tr>
           ))}
-        </tfoot>
+        </tfoot> */}
       </table>
     </>
   );

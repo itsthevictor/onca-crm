@@ -48,11 +48,12 @@ const AddUser = () => {
   return (
     <Wrapper>
       <div className='wrapper'>
-        <div className='page-title'>
-          <h2>Adaugă user</h2>
-        </div>
         <div className='form-container'>
           <Form method='post'>
+            <div className='page-title'>
+              <h2>Adaugă user</h2>
+            </div>
+            <div className='form-row'></div>
             <div className='form-row'>
               {' '}
               <label htmlFor='firstName'>prenume</label>

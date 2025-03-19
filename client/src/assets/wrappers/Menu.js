@@ -113,7 +113,7 @@ const Wrapper = styled.div`
       background: inherit;
       border: none;
       outline: none;
-      color: var(--blue-000);
+      color: var(--blue-50);
       opacity: 0.8;
       transition: all 0.2s linear;
       width: fit-content;
@@ -124,7 +124,7 @@ const Wrapper = styled.div`
       }
 
       &:hover {
-        background: var(--blue-400);
+        /* background: var(--blue-400); */
         opacity: 1;
         color: var(--primary-100);
       }

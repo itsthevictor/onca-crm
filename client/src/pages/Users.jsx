@@ -26,7 +26,6 @@ const Users = () => {
       </header>
       <div className='container'>
         <div className='user-list '>
-          <SortingTable tableData={users} COLUMNS={USER_COLUMNS} />
           <FilteringTable tableData={users} COLUMNS={USER_COLUMNS} />
         </div>
       </div>

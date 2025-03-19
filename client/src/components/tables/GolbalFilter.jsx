@@ -10,7 +10,7 @@ const GlobalFilter = ({ filter, setFilter }) => {
 
   return (
     <div className='global-filter'>
-      Search:&nbsp;
+      Caută:&nbsp;
       <input
         value={value || ''}
         onChange={(e) => {

@@ -6,13 +6,13 @@ const Wrapper = styled.div`
     flex-direction: column;
     align-items: start;
     justify-content: center;
-
     user-select: none;
     .page-title {
       margin-bottom: 20px;
     }
 
-    .form-container .card-container {
+    .form-container,
+    .card-container {
       padding: 25px;
 
       border-radius: var(--round-sm);

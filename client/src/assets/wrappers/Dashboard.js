@@ -18,7 +18,7 @@ const Wrapper = styled.section`
 
     .dashboard-page {
       width: 100%;
-      padding: 1rem 2rem;
+      padding: 2rem;
       max-height: calc(100vh - var(--nav-height));
       background: white;
 
@@ -70,15 +70,6 @@ const Wrapper = styled.section`
         }
       }
 
-      .form-container,
-      .card-container {
-        padding: 25px;
-        width: fit-content;
-        border-radius: var(--round-sm);
-        border: 1px solid var(--grey-100);
-        box-shadow: 0px 0px 9px -3px rgba(0, 0, 0, 0.09);
-      }
-
       table {
         font-family: Arial, Helvetica, sans-serif;
         border-collapse: collapse;
@@ -111,29 +102,30 @@ const Wrapper = styled.section`
       }
 
       .global-filter {
-        font-size: larger;
+        font-size: medium;
         display: flex;
         align-items: flex-end;
-        color: white;
-        background-color: var(--blue-300);
-        padding: 10px 20px;
+        justify-content: flex-start;
+        color: var(--grey-900);
+        background-color: white;
+        padding: 0.5rem 0;
       }
 
       .global-filter input,
       .column-filter input {
         padding: 5px 10px;
         border: none;
-        background-color: var(--blue-300);
+        background-color: var(--grey-25);
         border-radius: 3px;
         outline: none;
         transition: all 0.2s ease;
       }
-      .global-filter input:hover,
+      /* .global-filter input:hover,
       .global-filter input:focus,
       .column-filter input:hover,
       .column-filter input:focus {
         background-color: white;
-      }
+      } */
 
       .column-filter input {
         width: 90%;
@@ -204,13 +196,13 @@ const Wrapper = styled.section`
       .column-selectors label {
         padding: 5px 10px;
         border-radius: 3px;
-        background-color: var(--blue-300);
+        background-color: var(--blue-400);
         color: white;
         cursor: pointer;
       }
 
       .column-selectors label:hover {
-        background-color: var(--blue-300);
+        background-color: var(--blue-400);
       }
 
       .column-selectors input[type='checkbox']:checked + label {
