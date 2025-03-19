@@ -1,4 +1,4 @@
-export const COLUMNS = [
+export const USER_COLUMNS = [
   // {
   //   Header: 'Id',
   //   Footer: 'Id',
@@ -26,7 +26,7 @@ export const COLUMNS = [
   },
 ];
 
-export const GROUPED_COLUMNS = [
+export const GROUPED_USER_COLUMNS = [
   {
     Header: 'Id',
     Footer: 'Id',

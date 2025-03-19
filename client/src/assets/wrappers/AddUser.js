@@ -12,7 +12,7 @@ const Wrapper = styled.div`
       margin-bottom: 20px;
     }
 
-    .form-container {
+    .form-container .card-container {
       padding: 25px;
 
       border-radius: var(--round-sm);

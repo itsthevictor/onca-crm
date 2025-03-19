@@ -1,8 +1,8 @@
 import { useTable, useSortBy } from 'react-table';
-import { COLUMNS, GROUPED_COLUMNS } from './usersColumns.js';
+
 import { useMemo } from 'react';
 
-const SortingTable = ({ tableData }) => {
+const SortingTable = ({ tableData, COLUMNS }) => {
   const columns = useMemo(() => COLUMNS, []);
   const data = useMemo(() => tableData, []);
 
