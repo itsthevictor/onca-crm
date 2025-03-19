@@ -33,7 +33,7 @@ const Wrapper = styled.section`
 
       header {
         display: flex;
-        align-items: bottom;
+        align-items: center;
         justify-content: space-between;
         margin-bottom: 1rem;
 

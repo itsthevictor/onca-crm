@@ -23,6 +23,9 @@ const Wrapper = styled.div`
 
   .global-filter input {
     box-shadow: 0px 0px 9px -3px rgba(0, 0, 0, 0.09);
+    ::placeholder {
+      color: var(--grey-100);
+    }
   }
   .form-container,
   .card-container {
@@ -36,29 +39,23 @@ const Wrapper = styled.div`
       /* font-family: Arial, Helvetica, sans-serif; */
       border-collapse: collapse;
       width: fit-content;
+      min-width: 30vw;
       text-align: left !important;
-
-      /* thead th {
-      text-align: left !important;
-     
-    } */
     }
 
     table th {
       padding: 10px 50px 10px 10px;
       text-align: left !important;
-      text-transform: capitalize;
+      color: var(--grey-200);
       font-size: small;
       border-bottom: 1px solid var(--grey-25);
-      :hover {
-        background: white;
-      }
     }
 
     table td {
       padding: 10px 50px 10px 10px;
       text-align: left;
-      text-transform: capitalize;
+
+      /* text-transform: capitalize; */
       font-size: small;
     }
 
@@ -67,6 +64,7 @@ const Wrapper = styled.div`
       } */
     table tr {
       border-bottom: 1px solid var(--grey-25);
+      color: var(--grey-900);
     }
 
     table tr:last-of-type {
@@ -81,7 +79,6 @@ const Wrapper = styled.div`
     table th,
     tfoot td {
       font-size: small;
-      color: var(--grey-400);
     }
 
     .global-filter input,

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Form, useLoaderData } from 'react-router-dom';
+import { Form, useLoaderData, Link } from 'react-router-dom';
 import Wrapper from '../assets/wrappers/AddCompany';
 import { mainFetch } from '../utils/customFetch';
 import { toast } from 'react-toastify';
@@ -43,27 +43,21 @@ const Companies = () => {
     setTab(window.location.hash);
   });
 
+  useEffect(() => {
+    setTab(window.location.hash);
+  }, []);
+
   return (
     <Wrapper>
-      <div className='companies-container'>
+      {tab === '#lista' && (
+        <header>
+          <h3 className='title'>Companii Proprii</h3>
+          <a href='#adauga-companie'>{' + adaugă companie'}</a>
+        </header>
+      )}
+      <div className='container'>
         <div className='content'>
-          {tab === '#lista' && (
-            <div className='list'>
-              <div className='title'>
-                <h3>Companii proprii</h3>
-                <a
-                  className='add'
-                  href='#adauga-companie'
-                  type='button'
-                  onClick={() => {
-                    setTab('#adauga-companie');
-                  }}
-                >
-                  + adaugă companie
-                </a>
-              </div>
-            </div>
-          )}
+          {tab === '#lista' && <div className='list'></div>}
           {tab === '#adauga-companie' && (
             <div className='add-company'>
               <div className='title'>

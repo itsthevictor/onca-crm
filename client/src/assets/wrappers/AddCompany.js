@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  padding-right: 1rem;
-  z-index: 1;
   .title {
     display: flex;
     justify-content: space-between;
