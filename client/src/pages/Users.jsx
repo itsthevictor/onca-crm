@@ -3,6 +3,7 @@ import Wrapper from '../assets/wrappers/Users';
 import { AddButton } from '../components';
 import { mainFetch } from '../utils/customFetch';
 import { toast } from 'react-toastify';
+import SortingTable from '../components/tables/SortingTable';
 export const usersLoader = async () => {
   try {
     const response = await mainFetch.get('/users');
@@ -22,11 +23,7 @@ const Users = () => {
         <Link to='adauga-user'>{' + adaugă user'}</Link>
       </header>
       <div className='user-list'>
-        {users.map((item, i) => (
-          <div className='user' key={i}>
-            {item.firstName}
-          </div>
-        ))}
+        <SortingTable tableData={users} />
       </div>
     </Wrapper>
   );

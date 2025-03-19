@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Wrapper = styled.section`
   .dashboard-container {
@@ -20,6 +20,7 @@ const Wrapper = styled.section`
       width: 100%;
       padding: 1rem 2rem;
       max-height: calc(100vh - var(--nav-height));
+      background: white;
     }
   }
 `;

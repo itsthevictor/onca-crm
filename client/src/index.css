@@ -2,6 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap');
 @import 'react-toastify/dist/ReactToastify.min.css';
+
+body {
+  background: var(--blue-500);
+}
 .orbitron-style {
   font-family: 'Orbitron', sans-serif;
   font-optical-sizing: auto;
