@@ -10,9 +10,9 @@ const GlobalFilter = ({ filter, setFilter }) => {
 
   return (
     <div className='global-filter'>
-      Caută:&nbsp;
       <input
         value={value || ''}
+        placeHolder='Filtrează...'
         onChange={(e) => {
           setValue(e.target.value);
           handleChange(e.target.value);

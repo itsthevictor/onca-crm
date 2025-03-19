@@ -22,6 +22,15 @@ const Wrapper = styled.section`
       max-height: calc(100vh - var(--nav-height));
       background: white;
 
+      .form-container,
+      .card-container {
+        padding: 25px;
+        width: fit-content;
+        border-radius: var(--round-sm);
+        border: 1px solid var(--grey-100);
+        box-shadow: 0px 0px 9px -3px rgba(0, 0, 0, 0.09);
+      }
+
       header {
         display: flex;
         align-items: bottom;
@@ -71,34 +80,45 @@ const Wrapper = styled.section`
       }
 
       table {
-        font-family: Arial, Helvetica, sans-serif;
+        /* font-family: Arial, Helvetica, sans-serif; */
         border-collapse: collapse;
-        width: 100%;
+        width: fit-content;
+        text-align: left !important;
+        /* thead tr th {
+        } */
       }
 
-      table td,
       table th {
-        border: 1px solid #ddd;
-        padding: 5px;
-        text-align: center;
+        padding: 10px 50px;
+        text-align: left;
         text-transform: capitalize;
+        font-size: small;
       }
 
-      table tr:nth-child(even) {
+      table td {
+        padding: 10px 50px 10px 10px;
+        text-align: left;
+        text-transform: capitalize;
+        font-size: small;
+      }
+
+      /* table tr:nth-child(even) {
         background-color: #f5f5f5;
+      } */
+      table tr {
+        border-bottom: 1px solid var(--grey-25);
       }
 
       table tr:hover {
         cursor: pointer;
-        background-color: #ddd;
+        background-color: var(--grey-25);
       }
 
       table th,
       tfoot td {
-        padding-top: 12px;
-        padding-bottom: 12px;
-        background-color: var(--blue-300);
-        color: white;
+        padding-top: 12px 0;
+        font-size: medium;
+        color: var(--grey-400);
       }
 
       .global-filter {
@@ -114,11 +134,14 @@ const Wrapper = styled.section`
       .global-filter input,
       .column-filter input {
         padding: 5px 10px;
-        border: none;
-        background-color: var(--grey-25);
-        border-radius: 3px;
+        border: 1px solid var(--grey-100);
+        border-radius: var(--round-sm);
         outline: none;
         transition: all 0.2s ease;
+      }
+
+      .global-filter input {
+        box-shadow: 0px 0px 9px -3px rgba(0, 0, 0, 0.09);
       }
       /* .global-filter input:hover,
       .global-filter input:focus,
