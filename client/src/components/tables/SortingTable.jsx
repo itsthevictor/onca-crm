@@ -31,7 +31,7 @@ const SortingTable = ({ tableData, COLUMNS }) => {
                 {column.render('Header')}
                 <span>
                   &nbsp;
-                  {column.isSorted ? (column.isSortedDesc ? '↑' : '↓') : ''}
+                  {column.isSorted ? (column.isSortedDesc ? '↓' : '↑') : ''}
                 </span>
               </th>
             ))}

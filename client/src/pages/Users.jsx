@@ -5,6 +5,7 @@ import { mainFetch } from '../utils/customFetch';
 import { toast } from 'react-toastify';
 import SortingTable from '../components/tables/SortingTable';
 import { USER_COLUMNS } from '../components/tables/columns';
+import FilteringTable from '../components/tables/FilteringTable';
 export const usersLoader = async () => {
   try {
     const response = await mainFetch.get('/users');
@@ -24,8 +25,9 @@ const Users = () => {
         <Link to='adauga-user'>{' + adaugă user'}</Link>
       </header>
       <div className='container'>
-        <div className='user-list card-container'>
+        <div className='user-list '>
           <SortingTable tableData={users} COLUMNS={USER_COLUMNS} />
+          <FilteringTable tableData={users} COLUMNS={USER_COLUMNS} />
         </div>
       </div>
     </Wrapper>
