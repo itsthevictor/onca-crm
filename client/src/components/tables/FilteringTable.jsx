@@ -1,5 +1,5 @@
 import { useTable, useGlobalFilter, useFilters } from 'react-table';
-
+import Wrapper from '../../assets/wrappers/Table';
 import { useMemo } from 'react';
 import GlobalFilter from './GolbalFilter';
 import ColumnFilter from './ColumnFilter';
@@ -35,7 +35,7 @@ const FilteringTable = ({ tableData, COLUMNS }) => {
   const { globalFilter } = state;
 
   return (
-    <>
+    <Wrapper>
       <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter} />
       <div className='card-container'>
         <table {...getTableProps()}>
@@ -76,7 +76,7 @@ const FilteringTable = ({ tableData, COLUMNS }) => {
         </tfoot> */}
         </table>{' '}
       </div>
-    </>
+    </Wrapper>
   );
 };
 export default FilteringTable;

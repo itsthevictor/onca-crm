@@ -10,7 +10,10 @@ export const USER_COLUMNS = [
     Header: 'Prenume',
     Footer: 'Prenume',
     accessor: 'firstName',
-    sticky: 'left',
+    // sticky: 'left',
+    meta: {
+      align: 'left',
+    },
   },
   {
     Header: 'Nume',
