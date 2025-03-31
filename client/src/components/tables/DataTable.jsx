@@ -79,10 +79,10 @@ const GlobalFilterInput = styled.input`
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
 `;
 
-// const Dropdown = styled.div`
-//   position: relative;
-//   display: inline-block;
-// `;
+const Dropdown = styled.div`
+  position: relative;
+  display: inline-block;
+`;
 
 const DropdownButton = styled.button`
   padding: 5px 10px;
