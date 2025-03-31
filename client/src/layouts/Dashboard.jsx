@@ -21,12 +21,14 @@ export const dashboardLoader = async () => {
 
     if (!user) {
       // return redirect('/autentificare');
-      let user = {
-        userId: '670f9ea9fb2ff9d4daf2022c',
-        role: 'admin',
-      };
     }
 
+    // let demoUser = {
+    //   firstName: 'Victor',
+    //   lastName: 'Alexa',
+    //   userId: '670f9ea9fb2ff9d4daf2022c',
+    //   role: 'admin',
+    // };
     return user;
   } catch (error) {
     console.log('error');

@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-
+import { Paper, CssBaseline } from '@mui/material';
 import Dashboard, { dashboardLoader } from './layouts/Dashboard';
 import Partners from './pages/Partners';
 import Users, { usersLoader } from './pages/Users';
