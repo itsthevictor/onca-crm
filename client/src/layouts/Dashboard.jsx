@@ -32,8 +32,8 @@ export const dashboardLoader = async () => {
     return user;
   } catch (error) {
     console.log('error');
-    return null;
-    // return redirect('/autentificare');
+    // return null;
+    return redirect('/autentificare');
   }
 };
 
