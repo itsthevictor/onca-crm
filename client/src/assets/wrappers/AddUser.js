@@ -14,7 +14,7 @@ const Wrapper = styled.div`
     .form-container,
     .card-container {
       padding: 25px;
-
+      background: white;
       border-radius: var(--round-sm);
       border: 1px solid var(--grey-100);
       box-shadow: 0px 0px 9px -3px rgba(0, 0, 0, 0.09);

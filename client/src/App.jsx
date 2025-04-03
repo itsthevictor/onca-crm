@@ -2,10 +2,10 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Paper, CssBaseline } from '@mui/material';
 import Dashboard, { dashboardLoader } from './layouts/Dashboard';
 import Partners from './pages/Partners';
-import Users, { usersLoader } from './pages/Users';
+import Users, { usersLoader, addUserAction } from './pages/Users';
 import Login, { loginAction } from './pages/Login';
 import Register from './pages/Register';
-import AddUser, { addUserAction } from './pages/AddUser';
+import AddUser from './pages/AddUser';
 import VerifyEmail, {
   verifyEmailAction,
   verifyEmailLoader,
@@ -45,11 +45,11 @@ function App() {
           path: 'useri',
           element: <Users />,
           loader: usersLoader,
+          action: addUserAction,
         },
         {
           path: '/useri/adauga-user',
           element: <AddUser />,
-          action: addUserAction,
         },
         {
           path: 'leads',

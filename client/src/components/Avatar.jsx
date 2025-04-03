@@ -3,19 +3,17 @@ import { BiLogOutCircle } from 'react-icons/bi';
 import { useState } from 'react';
 import Wrapper from '../assets/wrappers/Avatar';
 
-const Avatar = () => {
-  const { user } = useDashboardContext();
-
-  const avatarURL = `https://avatar.iran.liara.run/username?username=${user.firstName}+${user.lastName}`;
+const Avatar = ({ firstName, lastName, userAvatar }) => {
+  const avatarURL = `https://avatar.iran.liara.run/username?username=${firstName}+${lastName}`;
 
   return (
     <Wrapper>
       <button type='button' className='btn user-btn'>
         <img
-          src={user.avatar ? user.avatar : avatarURL}
+          src={userAvatar ? userAvatar : avatarURL}
           alt='avatar'
           className='avatar'
-          title={`${user.firstName} ${user.lastName}`}
+          title={`${firstName} ${lastName}`}
         />
       </button>
     </Wrapper>

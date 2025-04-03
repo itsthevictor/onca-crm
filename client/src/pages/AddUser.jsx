@@ -3,21 +3,9 @@ import { Form, Link, redirect } from 'react-router-dom';
 import Wrapper from '../assets/wrappers/AddUser';
 import { mainFetch } from '../utils/customFetch';
 import { toast } from 'react-toastify';
-import { AddButton } from '../components';
+import { AddButton, CustomModal } from '../components';
 import { USER_ROLES } from '../../../utils/constants';
 
-export const addUserAction = async ({ request }) => {
-  const formData = await request.formData();
-  const data = Object.fromEntries(formData);
-
-  try {
-    await mainFetch.post('/auth/register', data);
-    toast.success('user registered');
-    return redirect('/useri');
-  } catch (error) {
-    return toast.error(error?.response?.data?.msg);
-  }
-};
 const AddUser = () => {
   const [userData, setUserData] = useState({
     firstName: '',
@@ -45,6 +33,7 @@ const AddUser = () => {
     setIsValidEmail(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)); // Simple email regex
     setUserData({ ...userData, email: value });
   };
+
   return (
     <Wrapper>
       <div className='wrapper'>

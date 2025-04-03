@@ -32,7 +32,11 @@ const Navbar = () => {
         </div>
         <div className='status'>
           <Link to='/profil'>
-            <Avatar />
+            <Avatar
+              firstName={user.firstName}
+              lastName={user.lastName}
+              userAvatar={user.avatar ? user.avatar : null}
+            />
           </Link>
         </div>
       </div>

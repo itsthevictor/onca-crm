@@ -5,10 +5,10 @@ const Wrapper = styled.div`
     cursor: pointer;
   }
   .user-btn {
-    background: var(--blue-500);
-    border: 1px solid var(--blue-500);
+    background: transparent;
+    border: none;
+    padding: 0;
     outline: none;
-
     position: relative;
     .avatar {
       border-radius: 100%;
