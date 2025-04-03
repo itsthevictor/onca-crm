@@ -24,6 +24,7 @@ import ResetPassword, {
 } from './pages/ResetPassword';
 import Error from './pages/Error';
 import Profile from './pages/Profile';
+import EditUser from './pages/EditUser';
 
 function App() {
   const router = createBrowserRouter([
@@ -46,6 +47,10 @@ function App() {
           element: <Users />,
           loader: usersLoader,
           action: addUserAction,
+        },
+        {
+          path: 'edit-user/:id',
+          element: <EditUser />,
         },
         {
           path: '/useri/adauga-user',

@@ -115,7 +115,11 @@ const Users = () => {
       </header>
       <div className='container'>
         <div className='user-list '>
-          <DataTable data={users} columns={USER_COLUMNS} />
+          <DataTable
+            data={users}
+            columns={USER_COLUMNS}
+            rowLink={(user) => `edit-user/${user._id}`}
+          />
         </div>
       </div>
       <CustomModal

@@ -14,6 +14,7 @@ import {
   FiChevronsRight,
   FiChevronRight,
 } from 'react-icons/fi';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 // Styled components for the table
 const TableContainer = styled.div`
@@ -166,7 +167,7 @@ const RowsPerPageSelect = styled.select`
   margin-left: 10px;
 `;
 
-const DataTable = ({ columns, data }) => {
+const DataTable = ({ columns, data, rowLink }) => {
   const tableRef = useRef(null);
 
   const {
@@ -260,7 +261,19 @@ const DataTable = ({ columns, data }) => {
           <tbody {...getTableBodyProps()}>
             {page.map((row) => {
               prepareRow(row);
-              return (
+              const user = row.original; // Access the row's original data
+              const link = rowLink ? rowLink(user) : null; // Generate the link if rowLink is provided
+              return link ? (
+                <tr
+                  {...row.getRowProps()}
+                  style={{ cursor: 'pointer' }}
+                  onClick={() => (window.location.href = link)} // Redirect on row click
+                >
+                  {row.cells.map((cell) => (
+                    <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                  ))}
+                </tr>
+              ) : (
                 <tr {...row.getRowProps()}>
                   {row.cells.map((cell) => (
                     <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
